@@ -136,7 +136,8 @@ export default function AmbikaChikana() {
                 key={i}
                 src={img}
                 alt=""
-                className="w-[48%] rounded-xl shadow-lg"
+                className="w-[48%] h-[300px] object-cover rounded-xl shadow-xl"
+
               />
             ))}
           </div>

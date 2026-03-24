@@ -160,7 +160,8 @@ export default function AmbikaDhanna() {
                   key={j}
                   src={img}
                   alt="Gallery"
-                  className="w-[48%] rounded-xl shadow-xl"
+                  className="w-[48%] h-[300px] object-cover rounded-xl shadow-xl"
+
                 />
               ))}
             </div>
