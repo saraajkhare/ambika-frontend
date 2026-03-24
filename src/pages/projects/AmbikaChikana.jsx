@@ -17,10 +17,10 @@ import devFloor1 from "../../assets/projects/devendra/floor1.jpg";
 import devFloor2 from "../../assets/projects/devendra/floor2.jpg";
 
 
-import gal1 from "../../assets/projects/chikana/ch11.jpeg";
-import gal2 from "../../assets/projects/chikana/ch12.jpeg";
-import gal3 from "../../assets/projects/chikana/ch13.jpeg";
-import gal4 from "../../assets/projects/chikana/ch14.jpeg";
+import gal1 from "../../assets/projects/chikana/ch1.jpeg";
+import gal2 from "../../assets/projects/chikana/ch2.jpeg";
+import gal3 from "../../assets/projects/chikana/ch3.jpeg";
+import gal4 from "../../assets/projects/chikana/ch4.jpeg";
 
 import ContactParallax from "../../components/ContactParallax";
 
