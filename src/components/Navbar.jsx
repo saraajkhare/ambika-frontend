@@ -41,6 +41,8 @@ const Navbar = () => {
               {[
                 ["Ambika Ananda", "/projects/ambika-ananda"],
                 ["Ambika Devendra", "/projects/ambika-devendra"],
+                ["Ambika Dhanna", "/projects/ambika-dhanna"],
+                ["Ambika Chikana", "/projects/ambika-chikana"],
                 ["Ambika Shree", "/projects/ambika-shree"],
                 ["Ambika Heritage", "/projects/ambika-heritage"],
                 ["Ambika Green", "/projects/ambika-green"],
