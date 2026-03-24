@@ -11,7 +11,8 @@ import apartment from "../assets/projects/apartment.jpg";
 import devendra from "../assets/projects/devendra.jpg";
 import benu from "../assets/projects/benu.jpg";
 import tarahira from "../assets/projects/tarahira.jpg";
-
+import dh1 from "../assets/projects/dhanna/dh1.jpg";
+import ch1 from "../assets/projects/chikana/ch1.jpg";
 // UNDER CONSTRUCTION
 import ananda from "../assets/projects/underconstruction/ananda.jpg";
 import devi from "../assets/projects/underconstruction/devi.jpg";
@@ -22,6 +23,8 @@ import shrine from "../assets/projects/upcoming/shrine.jpg";
 
 const completedProjects = [
   { name: "Ambika Heritage", image: heritage, units: 33, floors: 7, status: "Sold Out" },
+  { name: "Ambika Dhana", image: dh1, units: 33, floors: 7, status: "Sold Out" },
+  { name: "Ambika Chikana", image: ch1, units: 33, floors: 7, status: "Sold Out" },
   { name: "Ambika Green", image: green, units: 35, floors: 6, status: "Sold Out" },
   { name: "Ambika Residency", image: residency, units: 8, floors: 4, status: "Sold Out" },
   { name: "Ambika Shreehari", image: shreehari, units: 24, floors: 6, status: "Sold Out" },
