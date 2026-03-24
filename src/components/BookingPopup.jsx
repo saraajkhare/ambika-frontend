@@ -69,8 +69,8 @@ export default function BookingPopup() {
         </h2>
 
         <div className="grid grid-cols-2 gap-4 mb-6">
-          <img src={anandaImg} className="rounded-xl" alt="property image"/>
-          <img src={diamondImg} className="rounded-xl" alt="property image"/>
+          <img src={anandaImg} className="rounded-xl" alt="property"/>
+          <img src={diamondImg} className="rounded-xl" alt="property"/>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
