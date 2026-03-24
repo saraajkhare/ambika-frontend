@@ -26,10 +26,10 @@ import floor7 from "../../assets/projects/ananda/floor7.jpg";
 import floor8 from "../../assets/projects/ananda/floor8.jpg";
 
 
-import gal1 from "../../assets/projects/ananda/gal1.png";
-import gal2 from "../../assets/projects/ananda/gal2.png";
-import gal3 from "../../assets/projects/ananda/gal3.png";
-import gal4 from "../../assets/projects/ananda/gal4.png";
+import gal1 from "../../assets/projects/dhanna/dh1.jpeg";
+import gal2 from "../../assets/projects/dhanna/dh2.jpeg";
+import gal3 from "../../assets/projects/dhanna/dh3.jpeg";
+import gal4 from "../../assets/projects/dhanna/dh4.jpeg";
 
 import ContactParalax from "../../components/ContactParallax";
 

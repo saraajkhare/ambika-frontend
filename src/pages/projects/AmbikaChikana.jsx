@@ -17,12 +17,11 @@ import devFloor1 from "../../assets/projects/devendra/floor1.jpg";
 import devFloor2 from "../../assets/projects/devendra/floor2.jpg";
 
 
-import gal1 from "../../assets/projects/ananda/gal1.png";
-import gal2 from "../../assets/projects/ananda/gal2.png";
-import gal3 from "../../assets/projects/ananda/gal3.png";
-import gal4 from "../../assets/projects/ananda/gal4.png";
-import gal5 from "../../assets/projects/ananda/gal5.png";
-import gal6 from "../../assets/projects/ananda/gal6.png";
+import gal1 from "../../assets/projects/chikana/ch11.jpeg";
+import gal2 from "../../assets/projects/chikana/ch12.jpeg";
+import gal3 from "../../assets/projects/chikana/ch13.jpeg";
+import gal4 from "../../assets/projects/chikana/ch14.jpeg";
+
 import ContactParallax from "../../components/ContactParallax";
 
 /* ---------- AMENITY CARD ---------- */
@@ -39,7 +38,7 @@ function Amenity({ icon, title, meta }) {
 const photoSlides = [
   [gal1, gal2],
   [gal3, gal4],
-  [gal5, gal6],
+  
 ];
 
 export default function AmbikaChikana() {
@@ -193,10 +192,10 @@ export default function AmbikaChikana() {
       {/* MAP */}
       <section className="w-full h-[420px]">
         <iframe
-          src="https://www.google.com/maps?q=Ambika+Devendra+Khanapara+Guwahati&output=embed"
+          src="https://www.google.com/maps?q=Ambika+Chikana+Khanapara+Guwahati&output=embed"
           className="w-full h-full border-0"
           loading="lazy"
-          title="Ambika Devendra Location"
+          title="Ambika Chikana Location"
         />
       </section>
 
