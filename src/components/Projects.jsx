@@ -11,8 +11,8 @@ import apartment from "../assets/projects/apartment.jpg";
 import devendra from "../assets/projects/devendra.jpg";
 import benu from "../assets/projects/benu.jpg";
 import tarahira from "../assets/projects/tarahira.jpg";
-import dh1 from "../assets/projects/dhanna/dh1.jpg";
-import ch1 from "../assets/projects/chikana/ch1.jpg";
+import dh1 from "../assets/projects/dhanna/dh1.jpeg";
+import ch1 from "../assets/projects/chikana/ch1.jpeg";
 // UNDER CONSTRUCTION
 import ananda from "../assets/projects/underconstruction/ananda.jpg";
 import devi from "../assets/projects/underconstruction/devi.jpg";
