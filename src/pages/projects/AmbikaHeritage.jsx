@@ -51,7 +51,7 @@ const photoSlides = [
 
 export default function AmbikaHeritage() {
   const [activePhoto, setActivePhoto] = useState(0);
-  const [zoomImg, setZoomImg] = useState(null);
+
 
   return (
     <div className="max-w-7xl mx-auto px-4">
