@@ -17,6 +17,8 @@ import DiamondHome from "./pages/projects/DiamondHome";
 import AmbikaShrine from "./pages/projects/AmbikaShrine";
 
 import AmbikaGreen from "./pages/projects/AmbikaGreen";
+import AmbikaDhanna from "./pages/projects/AmbikaDhanna";
+import AmbikaChikana from "./pages/projects/AmbikaChikana";
 
 import AboutUs from "./pages/AboutUs";
 
@@ -31,6 +33,10 @@ function App() {
         <Route path="/projects/ambika-devendra" element={<AmbikaDevendra />} />
         <Route path="/projects/ambika-shree" element={<AmbikaShree />} />
 <Route path="/projects/ambika-heritage" element={<AmbikaHeritage />} />
+
+<Route path="/projects/ambika-dhanna" element={<AmbikaDhanna />} />
+<Route path="/projects/ambika-chikana" element={<AmbikaChikana />} />
+
 <Route path="/projects/ambika-green" element={<AmbikaGreen />} />
 <Route path="/projects/ambika-shrine" element={<AmbikaShrine />} />
 <Route path="/projects/diamond-home" element={<DiamondHome />} />
