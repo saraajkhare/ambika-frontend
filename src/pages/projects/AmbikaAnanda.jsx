@@ -1,5 +1,5 @@
 import { useState } from "react";
-import grMedia from "../../assets/projects/ananda/ananda-master.jpg";
+
 import {
   FaBuilding,
   FaMountain,

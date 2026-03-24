@@ -15,7 +15,7 @@ import building from "../../assets/building.png";
 import amenitiesBg from "../../assets/projects/ananda/fam.jpg";
 import devFloor1 from "../../assets/projects/devendra/floor1.jpg";
 import devFloor2 from "../../assets/projects/devendra/floor2.jpg";
-import grMedia from "../../assets/projects/ananda/ananda-master.jpg";
+
 
 import gal1 from "../../assets/projects/ananda/gal1.png";
 import gal2 from "../../assets/projects/ananda/gal2.png";

@@ -9,7 +9,7 @@ import heFloor2 from "../../assets/projects/heritage/floor2.jpg";
 import heFloor3 from "../../assets/projects/heritage/floor3.jpg";
 
 import heMedia from "../../assets/projects/heritage/heritage.png";
-import grMedia from "../../assets/projects/ananda/ananda-master.jpg";
+
 
 import gal1 from "../../assets/projects/ananda/gal1.png";
 import gal2 from "../../assets/projects/ananda/gal2.png";
@@ -48,7 +48,6 @@ const photoSlides = [
   [gal5, gal6],
 ];
 
-const floorPlans = [heFloor1, heFloor2, heFloor3];
 
 export default function AmbikaHeritage() {
   const [activePhoto, setActivePhoto] = useState(0);

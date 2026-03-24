@@ -53,7 +53,7 @@ const photoSlides = [
   [gal5, gal6],
 ];
 
-const floorPlans = [fl1, fl2, fl3, fl4, fl5, fl6, fl7, fl8, fl9];
+
 
 export default function DiamondHome() {
   const [activePhoto, setActivePhoto] = useState(0);

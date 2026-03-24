@@ -7,7 +7,7 @@ import amenitiesBg from "../../assets/projects/ananda/fam.jpg";
 
 import srFloor1 from "../../assets/projects/shrine/floor1.jpg";
 import srFloor2 from "../../assets/projects/shrine/floor2.jpg";
-import grMedia from "../../assets/projects/ananda/ananda-master.jpg";
+
 
 import gal1 from "../../assets/projects/shrine/gal1.png";
 import gal2 from "../../assets/projects/shrine/gal2.png";
