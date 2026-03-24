@@ -1,7 +1,7 @@
 
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
-import ContactForm from "../components/ContactForm";
+
 import Footer from "../components/Footer";
 import FeatureStrip from "../components/FeatureStrip";
 import AboutHighlight from "../components/AboutHighlight";
