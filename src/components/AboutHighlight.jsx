@@ -16,13 +16,11 @@ export default function AboutHighlight() {
           {/* HEADER */}
           <div className="max-w-[860px] mx-auto mb-[15px]">
             <h2 className="font-[Playfair_Display] text-[38px] leading-[1.25] font-bold text-[#111] mb-3">
-              Leading real estate company in Guwahati
+              Leading Residential Plots Development Company in Nagpur
             </h2>
 
             <p className="font-[Inter] text-[16px] leading-[1.7] text-[#555]">
-              Ambika Housing is dedicated to delivering thoughtfully designed
-              homes with uncompromising construction quality and
-              Vastu-compliant planning.
+             Providing affordable plots for best investments in key locations
             </p>
           </div>
 
