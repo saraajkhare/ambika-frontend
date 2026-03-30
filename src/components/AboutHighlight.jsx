@@ -45,10 +45,11 @@ export default function AboutHighlight() {
               ✓
             </div>
             <h4 className="font-[Inter] text-[15px] tracking-[0.6px] font-semibold mb-[10px]">
-              ASSURED QUALITY
+             ASSURED LEGAL TITLE
             </h4>
             <p className="font-[Inter] text-[14.5px] leading-[1.65] text-white/90">
-              Premium construction standards with attention to detail at every stage.
+              We provide completely legal government, RERA approved plots.
+  Bank loan can be taken
             </p>
           </div>
 
@@ -58,10 +59,10 @@ export default function AboutHighlight() {
               ✓
             </div>
             <h4 className="font-[Inter] text-[15px] tracking-[0.6px] font-semibold mb-[10px]">
-              AFTER SALES SERVICE
+              FLEXIBLE PAYMENT TERMS
             </h4>
             <p className="font-[Inter] text-[14.5px] leading-[1.65] text-white/90">
-              Dedicated support that ensures long-term satisfaction for homeowners.
+              Payment terms suitable to your budget
             </p>
           </div>
 
@@ -71,10 +72,10 @@ export default function AboutHighlight() {
               ✓
             </div>
             <h4 className="font-[Inter] text-[15px] tracking-[0.6px] font-semibold mb-[10px]">
-              VALUE FOR MONEY
+              TIMELY DELIVERY
             </h4>
             <p className="font-[Inter] text-[14.5px] leading-[1.65] text-white/90">
-              Homes designed to offer lasting value without unnecessary costs.
+              You will get timely delivery of your plots
             </p>
           </div>
 
