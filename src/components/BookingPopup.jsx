@@ -10,7 +10,7 @@ export default function BookingPopup() {
     name: "",
     phone: "",
     email: "",
-    property: "Ambika Ananda",
+    property: "Tumdi Project",
   });
 
   useEffect(() => {
@@ -105,8 +105,8 @@ export default function BookingPopup() {
             onChange={handleChange}
             className="border px-3 py-2 rounded w-full"
           >
-            <option>Ambika Ananda</option>
-            <option>Diamond Home</option>
+            <option>Tumdi Project</option>
+<option>Khatmari Project</option>
           </select>
 
           <button
