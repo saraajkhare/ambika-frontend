@@ -2,22 +2,22 @@ import ReviewCard from "./ReviewCard";
 
 const reviews = [
   {
-    name: "Ranjit Chouhan",
-    time: "1 year ago",
+    name: "Pratik Goswani",
+    time: "2 months ago",
     rating: 5,
-    text: "Well connected place at affordable rates. Very peaceful place to live in.",
+    text: "Very smooth buying experience. The team was transparent and helpful throughout the process. Location is also very promising.",
   },
   {
-    name: "Meghalee Saharia",
-    time: "1 year ago",
+    name: "Rakesh Paulzagade",
+    time: "3 months ago",
     rating: 5,
-    text: "Get your dream home at Ambika Ananda.",
+    text: "Good investment opportunity. Plot layout is well planned and the staff guided us properly at every step.",
   },
   {
-    name: "Chandan Kumar",
-    time: "1 year ago",
+    name: "Madhuri Morey",
+    time: "1 month ago",
     rating: 5,
-    text: "Staff behaviour is very good and cooperative. Also affordable.",
+    text: "Really satisfied with the service. Everything from site visit to documentation was handled professionally.",
   },
 ];
 
