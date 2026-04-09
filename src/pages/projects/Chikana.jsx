@@ -8,7 +8,6 @@ import {
   FaMapMarkedAlt,
 } from "react-icons/fa";
 
-/* ===== IMAGES (CHANGE PATHS IF NEEDED) ===== */
 import hero from "../../assets/projects/chikana/hero.jpg";
 import gal1 from "../../assets/projects/chikana/ch1.jpeg";
 import gal2 from "../../assets/projects/chikana/ch2.jpeg";
@@ -26,48 +25,51 @@ export default function WasChikana() {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#fafafa]">
 
       {/* ================= HERO ================= */}
-      <div className="max-w-7xl mx-auto mt-10 rounded-2xl overflow-hidden shadow-2xl">
+      <div className="max-w-7xl mx-auto mt-10 rounded-2xl overflow-hidden shadow-2xl relative">
         <img
           src={hero}
-          alt="Was Chikana"
+          alt="Chikana Project"
           className="w-full h-[420px] object-cover"
         />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <h1 className="text-white text-4xl md:text-5xl font-bold">
+            Chikana
+          </h1>
+        </div>
       </div>
 
-      {/* ================= TITLE ================= */}
-      <div className="text-center my-10">
-        <h1 className="text-4xl font-bold">Chikana</h1>
-        <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+      {/* ================= TAGLINE ================= */}
+      <div className="text-center my-12 px-6">
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
           Premium plotted development designed for long-term growth, smart investment,
-          and future-ready living near emerging infrastructure corridors.
+          and future-ready living.
         </p>
       </div>
 
       {/* ================= PROJECT OVERVIEW ================= */}
-      <section className="bg-gray-50 py-20 px-6">
+      <section className="bg-white py-20 px-6">
         <div className="max-w-6xl mx-auto">
 
           <h2 className="text-3xl font-bold mb-6">Project Overview</h2>
 
           <p className="text-gray-700 leading-relaxed">
-            Was Chikana is a strategically located plotted development designed for
-            both end-users and investors. With upcoming infrastructure like highways,
-            industrial corridors, and regional growth hubs, this project offers strong
-            appreciation potential and long-term value.
+            Chikana is a strategically located plotted development near rapidly growing
+            infrastructure zones in Nagpur. With proximity to key roads, upcoming hubs,
+            and investment corridors, this project is ideal for both home buyers and investors.
           </p>
 
           <p className="text-gray-700 leading-relaxed mt-4">
-            Whether you want to build your dream home or invest early in a high-growth
-            zone, Was Chikana gives you flexibility, security, and a future-ready location.
+            Whether you're planning to build your dream home or secure a high-growth asset,
+            Chikana offers a perfect balance of affordability, location advantage, and future appreciation.
           </p>
 
         </div>
       </section>
 
-      {/* ================= WHY CHOOSE US ================= */}
+      {/* ================= WHY CHOOSE ================= */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
 
@@ -75,7 +77,7 @@ export default function WasChikana() {
             Why Choose This Project
           </h2>
 
-          <div className="border border-black">
+          <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
 
             {[
               ["🏡", "Residential Focus"],
@@ -88,9 +90,9 @@ export default function WasChikana() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="grid grid-cols-[70px_1fr] border-b border-black"
+                className="grid grid-cols-[70px_1fr] border-b last:border-none"
               >
-                <div className="flex items-center justify-center text-2xl p-4">
+                <div className="flex items-center justify-center text-xl bg-gray-50 p-4">
                   {item[0]}
                 </div>
                 <div className="flex items-center font-semibold text-lg p-4">
@@ -104,7 +106,7 @@ export default function WasChikana() {
       </section>
 
       {/* ================= FACILITIES ================= */}
-      <section className="bg-green-900 py-20 text-white px-6">
+      <section className="bg-gradient-to-r from-[#0f3b22] to-[#0b2e1a] py-20 text-white px-6">
         <h2 className="text-3xl font-bold text-center mb-12">
           Project Facilities
         </h2>
@@ -115,14 +117,28 @@ export default function WasChikana() {
           <Facility icon={<FaBolt />} title="Electricity" />
           <Facility icon={<FaTint />} title="Water Supply" />
           <Facility icon={<FaTree />} title="Green Spaces" />
-          <Facility icon={<FaShieldAlt />} title="Gated Layout" />
-          <Facility icon={<FaMapMarkedAlt />} title="Clear Demarcation" />
+          <Facility icon={<FaShieldAlt />} title="Secure Layout" />
+          <Facility icon={<FaMapMarkedAlt />} title="Plot Demarcation" />
 
         </div>
       </section>
 
+      {/* ================= PRICING CTA ================= */}
+      <section className="py-20 px-6 text-center bg-white">
+        <h2 className="text-3xl font-bold mb-4">
+          Limited Plots Available
+        </h2>
+        <p className="text-gray-600 mb-6">
+          Secure your plot today in a fast-growing location.
+        </p>
+
+        <button className="bg-[#e30613] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#c9000c] transition">
+          Get Pricing Details
+        </button>
+      </section>
+
       {/* ================= GALLERY ================= */}
-      <section className="py-20 text-center">
+      <section className="py-20 text-center bg-[#fafafa]">
         <h2 className="text-3xl font-semibold mb-10">Project Gallery</h2>
 
         <div className="max-w-6xl mx-auto">
@@ -135,8 +151,8 @@ export default function WasChikana() {
                 <img
                   key={j}
                   src={img}
-                  alt="Gallery"
-                  className="w-[48%] rounded-xl shadow-xl object-cover"
+                  alt="Chikana Project"
+                  className="w-[48%] h-[260px] rounded-xl shadow-xl object-cover"
                 />
               ))}
             </div>
@@ -156,18 +172,18 @@ export default function WasChikana() {
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
+      {/* ================= CONTACT ================= */}
       <ContactParallax />
 
-     {/* ================= MAP ================= */}
-<section className="w-full h-[420px]">
-  <iframe
-    src="https://www.google.com/maps?q=SAP CONTROL SYSTEMS AND ENGG PVT LTD, Information Technology Park, Salt Lake SMS India Rd, Parsodi, Subhash Nagar, Trimurti Nagar, Nagpur, Maharashtra 440022&output=embed"
-    className="w-full h-full border-0"
-    loading="lazy"
-    title="Was Chikana Location Map"
-  />
-</section>
+      {/* ================= MAP ================= */}
+      <section className="w-full h-[420px]">
+        <iframe
+          src="https://www.google.com/maps?q=SAP CONTROL SYSTEMS AND ENGG PVT LTD, Information Technology Park, Salt Lake SMS India Rd, Parsodi, Subhash Nagar, Trimurti Nagar, Nagpur, Maharashtra 440022&output=embed"
+          className="w-full h-full border-0"
+          loading="lazy"
+          title="Chikana Location"
+        />
+      </section>
 
     </div>
   );
@@ -176,10 +192,9 @@ export default function WasChikana() {
 /* ===== FACILITY CARD ===== */
 function Facility({ icon, title }) {
   return (
-    <div className="bg-white text-black rounded-xl p-6 text-center shadow-xl">
+    <div className="bg-white text-black rounded-xl p-6 text-center shadow-xl hover:scale-105 transition">
       <div className="text-3xl text-green-700 mb-3">{icon}</div>
       <h4 className="font-semibold">{title}</h4>
     </div>
   );
 }
-
