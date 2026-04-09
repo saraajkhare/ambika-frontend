@@ -8,7 +8,7 @@ import ContactUs from "./pages/ContactUs";
 import Blogs from "./pages/Blogs";
 import BlogDetails from "./pages/BlogDetails";
 
-import WasChikana from "./pages/projects/WasChikana";
+import WasChikana from "./pages/projects/Chikana";
 import AboutUs from "./pages/AboutUs";
 
 function App() {

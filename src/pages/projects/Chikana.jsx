@@ -39,7 +39,7 @@ export default function WasChikana() {
 
       {/* ================= TITLE ================= */}
       <div className="text-center my-10">
-        <h1 className="text-4xl font-bold">Was Chikana</h1>
+        <h1 className="text-4xl font-bold">Chikana</h1>
         <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
           Premium plotted development designed for long-term growth, smart investment,
           and future-ready living near emerging infrastructure corridors.
