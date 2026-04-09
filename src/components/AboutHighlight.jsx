@@ -1,4 +1,4 @@
-import building from "../assets/building.png";
+
 
 export default function AboutHighlight() {
   return (
