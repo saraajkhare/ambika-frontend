@@ -8,7 +8,7 @@ import {
   FaMapMarkedAlt,
 } from "react-icons/fa";
 
-import hero from "../../assets/projects/dhamana/hero.jpg";
+import hero from "../../assets/projects/dhamana/dh5.jpeg";
 import gal1 from "../../assets/projects/dhamana/dh1.jpeg";
 import gal2 from "../../assets/projects/dhamana/dh2.jpeg";
 import gal3 from "../../assets/projects/dhamana/dh3.jpeg";
