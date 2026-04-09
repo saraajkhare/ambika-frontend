@@ -99,7 +99,7 @@ export default function Chatbot() {
     {
       role: "assistant",
       content:
-        "Namaste! 🙏 Welcome to **Amarnath Infra Systems**.\n\nI'm your Plot Advisor — I can help you explore our residential plots at Tumdi near the Ring Road, understand pricing, check layout details, and guide you through the buying process.\n\nWhat would you like to know today?",
+        "Namaste! 🙏 Welcome to <strong>Amarnath Infra Systems</strong>.\n\nI'm your Plot Advisor — I can help you explore our residential plots at Tumdi near the Ring Road, understand pricing, check layout details, and guide you through the buying process.\n\nWhat would you like to know today?",
       time: new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true })
     }
   ]);
@@ -241,7 +241,7 @@ export default function Chatbot() {
               <div>
                 <div 
                   className="msg-bubble"
-                  dangerouslySetInnerHTML={{ __html: m.content.replace(/\n/g, '<br/>') }}
+                  dangerouslySetInnerHTML={{ __html: m.content.replace(/\n/g, '<br/>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}
                 />
                 <div className="msg-time">{m.time || 'Just now'}</div>
               </div>
