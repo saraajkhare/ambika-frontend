@@ -3,37 +3,7 @@ import building from "../assets/building.png";
 export default function AboutHighlight() {
   return (
     <>
-      {/* ABOUT SECTION */}
-      <section
-        className="relative pt-[70px] pb-[160px]"
-        style={{
-          backgroundImage: "url('/assets/background.png')",
-          backgroundRepeat: "repeat",
-          backgroundSize: "520px",
-        }}
-      >
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
-          {/* HEADER */}
-          <div className="max-w-[860px] mx-auto mb-[15px]">
-            <h2 className="font-[Playfair_Display] text-[38px] leading-[1.25] font-bold text-[#111] mb-3">
-              Leading Residential Plots Development Company in Nagpur
-            </h2>
-
-            <p className="font-[Inter] text-[16px] leading-[1.7] text-[#555]">
-             Providing affordable plots for best investments in key locations
-            </p>
-          </div>
-
-          {/* BUILDING IMAGE */}
-          <div className="mt-[-70px] mb-[-90px]">
-            <img
-              src={building}
-              alt="Building"
-              className="w-full max-w-[1080px] mx-auto block"
-            />
-          </div>
-        </div>
-      </section>
+      
 
       {/* FEATURES SECTION */}
       <section className="relative z-[5] mt-[-190px] px-[80px] pb-[40px] max-lg:px-6 max-lg:mt-[-60px] max-lg:pb-[80px]">
