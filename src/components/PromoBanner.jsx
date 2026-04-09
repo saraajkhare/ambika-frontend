@@ -1,7 +1,6 @@
 import { useState } from "react";
 import PromoVideo from "./PromoVideo";
-
-import bannerImg from "../assets/projects/underconstruction/ananda.jpg";
+import bannerVideo from "../assets/myvid.mp4";
 
 const PromoBanner = () => {
   const [open, setOpen] = useState(false);
@@ -17,18 +16,25 @@ const PromoBanner = () => {
           my-[80px]
           rounded-[18px]
           overflow-hidden
-          bg-cover
-          bg-center
         "
-        style={{ backgroundImage: `url(${bannerImg})` }}
       >
+        {/* VIDEO BACKGROUND */}
+        <video
+          src={bannerVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
         {/* OVERLAY */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-r
-            from-black/75
-            to-black/30
+            from-black/80
+            to-black/40
             p-[60px]
             flex flex-col justify-center
           "
@@ -53,14 +59,20 @@ const PromoBanner = () => {
           </button>
 
           {/* SUBTITLE */}
-          <p className="text-[#bfbfbf] text-[13px] tracking-[1.5px] mb-[8px]">
-            KNOW MORE ABOUT US
+          <p className="text-[#d1d1d1] text-[13px] tracking-[1.8px] mb-[8px] uppercase">
+            Residential Land Development | Nagpur
           </p>
 
-          {/* TITLE */}
-          <h2 className="text-white text-[34px] font-bold leading-[1.25] max-w-[600px]">
-            10+ Years Of Experience In Gardening <br /> & Landscaping
+          {/* MAIN TAGLINE */}
+          <h2 className="text-white text-[36px] font-bold leading-[1.25] max-w-[650px] mb-[10px]">
+            Your Plot. Your Legacy. Our Promise
           </h2>
+
+          {/* SUPPORT TEXT */}
+          <p className="text-white/80 text-[15px] max-w-[520px] leading-[1.6]">
+            We don’t just sell plots. We engineer opportunity — delivering
+            development-ready land in high-potential locations designed to grow in value.
+          </p>
         </div>
       </section>
 
