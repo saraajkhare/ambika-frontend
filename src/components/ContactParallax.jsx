@@ -58,8 +58,9 @@ export default function ContactParallax({ projectName = "Chikana" }) {
           "url('/assets/projects/ananda/ananda-master.jpg')",
       }}
     >
-      <div className="bg-[rgba(0,0,0,0.65)] backdrop-blur-[2px] py-28 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+      {/* GREEN OVERLAY */}
+      <div className="bg-[rgba(15,59,34,0.85)] py-24 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
 
           {/* LEFT */}
           <div className="text-white">
@@ -67,12 +68,12 @@ export default function ContactParallax({ projectName = "Chikana" }) {
               AmarInfratech
             </span>
 
-            <h2 className="text-4xl lg:text-5xl font-semibold leading-tight mt-4 mb-6">
+            <h2 className="text-4xl font-semibold leading-tight mt-4 mb-6">
               Your Plot. Your Legacy. <br />
-              <span className="text-[#facc15]">Our Promise</span>
+              <span className="text-[#a8d84e]">Our Promise</span>
             </h2>
 
-            <p className="text-white/80 text-sm mb-4">
+            <p className="text-white/90 text-sm mb-4">
               Information Technology Park, Salt Lake SMS India Rd,<br />
               Nagpur, 440022, MH, IN
             </p>
@@ -84,12 +85,12 @@ export default function ContactParallax({ projectName = "Chikana" }) {
               ✉ akre.amar@gmail.com
             </p>
 
-            {/* WhatsApp Button */}
+            {/* WhatsApp */}
             <a
               href="https://wa.me/919545272554"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-6 px-6 py-3 rounded-full bg-[#25D366] text-black font-semibold hover:scale-105 transition"
+              className="inline-block mt-6 px-6 py-3 rounded-full bg-[#a8d84e] text-[#0f3b22] font-semibold hover:scale-105 transition"
             >
               💬 Chat on WhatsApp
             </a>
@@ -99,17 +100,16 @@ export default function ContactParallax({ projectName = "Chikana" }) {
           <form
             onSubmit={handleSubmit}
             className="
-              bg-white/10 backdrop-blur-[14px]
-              border border-white/20
-              p-10 rounded-2xl
-              shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-              text-white
+              bg-white
+              p-10 rounded-xl
+              shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+              text-[#111]
             "
           >
             <h3 className="text-xl font-semibold mb-1">
               Get in Touch
             </h3>
-            <p className="text-sm text-white/70 mb-6">
+            <p className="text-sm text-[#666] mb-6">
               We’ll help you choose the right plot
             </p>
 
@@ -120,7 +120,7 @@ export default function ContactParallax({ projectName = "Chikana" }) {
                 onChange={handleChange}
                 placeholder="First Name *"
                 required
-                className="px-4 py-3 rounded-md bg-white/90 text-black outline-none focus:ring-2 focus:ring-yellow-400"
+                className="px-4 py-3 rounded-md border border-gray-300 outline-none focus:ring-2 focus:ring-[#a8d84e]"
               />
               <input
                 name="lastName"
@@ -128,7 +128,7 @@ export default function ContactParallax({ projectName = "Chikana" }) {
                 onChange={handleChange}
                 placeholder="Last Name *"
                 required
-                className="px-4 py-3 rounded-md bg-white/90 text-black outline-none focus:ring-2 focus:ring-yellow-400"
+                className="px-4 py-3 rounded-md border border-gray-300 outline-none focus:ring-2 focus:ring-[#a8d84e]"
               />
             </div>
 
@@ -140,7 +140,7 @@ export default function ContactParallax({ projectName = "Chikana" }) {
                 onChange={handleChange}
                 placeholder="Email *"
                 required
-                className="px-4 py-3 rounded-md bg-white/90 text-black outline-none focus:ring-2 focus:ring-yellow-400"
+                className="px-4 py-3 rounded-md border border-gray-300 outline-none focus:ring-2 focus:ring-[#a8d84e]"
               />
               <input
                 name="phone"
@@ -148,7 +148,7 @@ export default function ContactParallax({ projectName = "Chikana" }) {
                 onChange={handleChange}
                 placeholder="Mobile *"
                 required
-                className="px-4 py-3 rounded-md bg-white/90 text-black outline-none focus:ring-2 focus:ring-yellow-400"
+                className="px-4 py-3 rounded-md border border-gray-300 outline-none focus:ring-2 focus:ring-[#a8d84e]"
               />
             </div>
 
@@ -156,7 +156,7 @@ export default function ContactParallax({ projectName = "Chikana" }) {
               name="property"
               value={formData.property}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-white/90 text-black outline-none mb-6"
+              className="w-full px-4 py-3 rounded-md border border-gray-300 outline-none mb-6"
             >
               <option>Chikana</option>
               <option>Dhamana</option>
@@ -168,9 +168,9 @@ export default function ContactParallax({ projectName = "Chikana" }) {
               disabled={loading}
               className="
                 w-full py-3 rounded-md
-                bg-[#facc15] text-black font-bold
-                hover:bg-yellow-400
-                transition-all duration-300
+                bg-[#0f3b22] text-white font-bold
+                hover:bg-[#14532d]
+                transition
                 disabled:opacity-60
               "
             >
