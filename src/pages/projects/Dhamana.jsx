@@ -15,6 +15,7 @@ import gal3 from "../../assets/projects/dhamana/dh3.jpeg";
 import gal4 from "../../assets/projects/dhamana/dh4.jpeg";
 
 import ContactParallax from "../../components/ContactParallax";
+import Footer from "../../components/Footer";
 
 export default function WasDhamana() {
   const [active, setActive] = useState(0);
@@ -192,9 +193,9 @@ export default function WasDhamana() {
 /* ===== FACILITY CARD ===== */
 function Facility({ icon, title }) {
   return (
-    <div className="bg-white text-black rounded-xl p-6 text-center shadow-xl hover:scale-105 transition">
-      <div className="text-3xl text-green-700 mb-3">{icon}</div>
-      <h4 className="font-semibold">{title}</h4>
-    </div>
+    <><div className="bg-white text-black rounded-xl p-6 text-center shadow-xl hover:scale-105 transition">
+          <div className="text-3xl text-green-700 mb-3">{icon}</div>
+          <h4 className="font-semibold">{title}</h4>
+      </div><Footer /></>
   );
 }
