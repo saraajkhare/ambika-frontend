@@ -7,7 +7,7 @@ const images = [home1, home2, home3, home4];
 
 const FeatureStrip = () => {
   return (
-    <section className="bg-gradient-to-b from-[#0f3b22] to-[#0b2e1a] pt-[26px] pb-[120px]">
+    <section className="bg-gradient-to-b from-[#0f3b22] to-[#0b2e1a] py-[40px]">
       <div className="max-w-[1400px] mx-auto grid grid-cols-4 gap-[28px] px-[32px] max-lg:grid-cols-2 max-sm:grid-cols-1">
         {images.map((img, index) => (
           <div

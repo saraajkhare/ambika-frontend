@@ -5,7 +5,7 @@ export default function AboutHighlight() {
     <>
       
 
-      <section className="relative z-[5] mt-[-80px] px-[80px] pb-[60px] max-lg:px-6 max-lg:mt-[-50px]">
+      <section className="relative z-[5] mt-[0px] px-[80px] pb-[60px] max-lg:px-6 max-lg:mt-[-50px]">
   <div className="max-w-[1200px] mx-auto grid grid-cols-3 gap-[28px] max-lg:grid-cols-1">
 
     {/* CARD 1 */}
