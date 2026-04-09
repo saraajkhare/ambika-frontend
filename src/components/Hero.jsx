@@ -1,10 +1,11 @@
+import homebg from "../assets/homebg.png";
+
 const Hero = () => {
   return (
     <section
       className="relative h-[80vh] bg-cover bg-center"
       style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1501183638710-841dd1904471')",
+        backgroundImage: `url(${homebg})`,
       }}
     >
       {/* Overlay */}
