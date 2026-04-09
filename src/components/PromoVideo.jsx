@@ -1,3 +1,5 @@
+import videoFile from "../assets/myvid.mp4"; // add your video
+
 const PromoVideo = ({ onClose }) => {
   return (
     <div
@@ -21,12 +23,11 @@ const PromoVideo = ({ onClose }) => {
           transition-all duration-300 ease-out
         "
       >
-        <iframe
-          src="https://www.youtube.com/embed/JvmNsL_vxbk?autoplay=1&rel=0"
-          title="Teaser Video of Ambika Ananda"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          className="w-full h-full border-0"
+        <video
+          src={videoFile}
+          controls
+          autoPlay
+          className="w-full h-full object-cover"
         />
       </div>
     </div>
