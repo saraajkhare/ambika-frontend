@@ -112,19 +112,7 @@ export default function WasTumdi() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 text-center bg-white">
-        <h2 className="text-3xl font-bold mb-4">
-          Invest in Tumdi Today
-        </h2>
-        <p className="text-gray-600 mb-6">
-          Limited plots available at early-stage pricing.
-        </p>
-
-        <button className="bg-[#e30613] text-white px-8 py-3 rounded-md font-semibold hover:bg-[#c9000c] transition">
-          Get Pricing Details
-        </button>
-      </section>
+      
 
       {/* ✅ FIXED GALLERY */}
       <section className="py-20 text-center bg-[#fafafa]">

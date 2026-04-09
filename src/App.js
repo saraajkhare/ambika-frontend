@@ -10,6 +10,7 @@ import BlogDetails from "./pages/BlogDetails";
 
 import WasChikana from "./pages/projects/Chikana";
 import WasDhamana from "./pages/projects/Dhamana";
+import Chatbot from "./components/Chatbot";
 
 
 import AboutUs from "./pages/AboutUs";
@@ -36,6 +37,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:id" element={<BlogDetails />} />
+          <Chatbot />
         </Routes>
       </div>
     </Router>
