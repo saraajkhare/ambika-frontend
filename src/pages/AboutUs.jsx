@@ -14,7 +14,7 @@ import aboutHero from "../assets/homebg.png";
 import dh1 from "../assets/projects/dhanna/dh1.jpeg";
 import dh4 from "../assets/projects/dhanna/dh4.jpeg";
 import dh5 from "../assets/projects/dhanna/dh5.jpeg";
-import founder from "../assets/founder.jpg";
+
 
 import Achievements from "../components/Achievements";
 import ReviewsSection from "../components/ReviewsSection";
