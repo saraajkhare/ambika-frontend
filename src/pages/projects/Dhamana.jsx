@@ -185,17 +185,18 @@ export default function WasDhamana() {
           title="Dhamana Location"
         />
       </section>
+      <Footer />
 
     </div>
   );
 }
 
-/* ===== FACILITY CARD ===== */
 function Facility({ icon, title }) {
   return (
-    <><div className="bg-white text-black rounded-xl p-6 text-center shadow-xl hover:scale-105 transition">
-          <div className="text-3xl text-green-700 mb-3">{icon}</div>
-          <h4 className="font-semibold">{title}</h4>
-      </div><Footer /></>
+    <div className="bg-white text-black rounded-xl p-6 text-center shadow-xl hover:scale-105 transition">
+      <div className="text-3xl text-green-700 mb-3">{icon}</div>
+      <h4 className="font-semibold">{title}</h4>
+    </div>
   );
+
 }
