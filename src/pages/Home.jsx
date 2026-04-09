@@ -14,6 +14,7 @@ import Achievements from "../components/Achievements";
 import ReviewsSection from "../components/ReviewsSection"; 
 
 import ContactParallax from "../components/ContactParallax";
+import Chatbot from "../components/Chatbot";
 
 const Home = () => {
   return (
@@ -57,7 +58,7 @@ const Home = () => {
 </section>
   <Achievements />
       <ReviewsSection />
-     
+     <Chatbot/>
 
 
       <Footer />
