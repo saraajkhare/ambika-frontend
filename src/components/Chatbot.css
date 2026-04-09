@@ -216,3 +216,50 @@
   letter-spacing: 0.4px;
 }
 .chat-footer span { color: var(--primary); opacity: 0.8; font-weight: 500; }
+
+.chat-fab {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.chat-fab:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 40px rgba(200,0,0,0.3);
+}
+
+.chat-fab:active {
+  transform: scale(0.95);
+}
+
+.chat-fab svg {
+  width: 28px;
+  height: 28px;
+}
+
+.chat-header-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  margin-left: auto;
+}
+
+.chat-header-close:hover {
+  opacity: 1;
+}

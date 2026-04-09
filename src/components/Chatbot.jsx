@@ -106,6 +106,7 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showQuickTopics, setShowQuickTopics] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
@@ -210,16 +211,31 @@ export default function Chatbot() {
 
   return (
     <div className="chatbot-wrapper">
-      <div className="chat-widget">
-        {/* Header */}
-        <div className="chat-header">
-          <div className="header-avatar">🏡</div>
-          <div className="header-text">
-            <div className="header-name">Amarnath Infra Plot Advisor</div>
-            <div className="header-sub">Residential Land Experts · Nagpur Region</div>
+      {!isOpen && (
+        <button className="chat-fab" onClick={() => setIsOpen(true)} aria-label="Open chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+      )}
+
+      {isOpen && (
+        <div className="chat-widget">
+          {/* Header */}
+          <div className="chat-header">
+            <div className="header-avatar">🏡</div>
+            <div className="header-text">
+              <div className="header-name">Amarnath Infra Plot Advisor</div>
+              <div className="header-sub">Residential Land Experts · Nagpur Region</div>
+            </div>
+            <div className="status-dot"></div>
+            <button className="chat-header-close" onClick={() => setIsOpen(false)} aria-label="Close chat">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </div>
-          <div className="status-dot"></div>
-        </div>
 
         {/* Quick topic chips */}
         {showQuickTopics && (
@@ -290,6 +306,7 @@ export default function Chatbot() {
           Powered by <span>Claude AI · Anthropic</span> · Available 24 × 7
         </div>
       </div>
+      )}
     </div>
   );
 }
