@@ -4,9 +4,10 @@ import { useState } from "react";
 import ch1 from "../assets/projects/chikana/ch1.jpeg";
 import dh1 from "../assets/projects/dhanna/dh1.jpeg";
 
+
 // BOOKING OPEN (use any existing images for now)
-import ananda from "../assets/projects/underconstruction/ananda.jpg";
-import diamondhome from "../assets/projects/underconstruction/diamondhome.jpg";
+import tum1 from "../assets/projects/tumdi/tum1.jpeg";
+
 
 
 // ✅ COMPLETED PROJECTS (ONLY 2)
@@ -27,14 +28,10 @@ const completedProjects = [
 const bookingProjects = [
   {
     name: "Tumdi Project",
-    image: ananda, // placeholder
+    image: tum1, // placeholder
     status: "Booking Open",
   },
-  {
-    name: "Khatmari Project",
-    image: diamondhome, // placeholder
-    status: "Booking Open",
-  },
+  
 ];
 
 const Projects = () => {
