@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PieChartBox from "../components/PieChart";
+import Footer from "../components/Footer";
 
 export default function EmiCalculator() {
   const navigate = useNavigate();
@@ -155,6 +156,8 @@ export default function EmiCalculator() {
 
         </div>
       </section>
+      <Footer />
     </>
+    
   );
 }

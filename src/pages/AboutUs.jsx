@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import aboutHero from "../assets/homebg.png";
 
 import dh1 from "../assets/projects/dhanna/dh1.jpeg";
+import Footer from "../components/Footer";
 
 
 import dh4 from "../assets/projects/dhanna/dh4.jpeg";
@@ -145,6 +146,7 @@ export default function AboutUs() {
 
       <Achievements />
       <ReviewsSection />
+      <Footer />
 
     </div>
   );
