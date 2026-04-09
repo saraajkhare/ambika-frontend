@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import anandaImg from "../assets/projects/ananda/ananda-master.jpg";
-import diamondImg from "../assets/projects/enclave.jpg";
+import anandaImg from "../assets/projects/tumdi/tum1.jpeg";
+import diamondImg from "../assets/projects/chikana/ch1.jpeg";
 
 export default function BookingPopup() {
   const [open, setOpen] = useState(false);
