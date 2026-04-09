@@ -11,9 +11,9 @@ import {
 
 /* IMAGES */
 import aboutHero from "../assets/homebg.png";
-import dh1 from "../assets/projects/dhanna/dh1.jpeg";
-import dh4 from "../assets/projects/dhanna/dh4.jpeg";
-import dh5 from "../assets/projects/dhanna/dh5.jpeg";
+import dh1 from "../assets/projects/dhamana/dh1.jpeg";
+import dh4 from "../assets/projects/dhamana/dh4.jpeg";
+import dh5 from "../assets/projects/dhamana/dh5.jpeg";
 
 
 import Achievements from "../components/Achievements";
