@@ -6,7 +6,7 @@ import {
   Users,
   Zap,
   Leaf,
-  TrendingUp,
+  
 } from "lucide-react";
 
 /* IMAGES */
@@ -14,9 +14,11 @@ import aboutHero from "../assets/homebg.png";
 import dh1 from "../assets/projects/dhanna/dh1.jpeg";
 import dh4 from "../assets/projects/dhanna/dh4.jpeg";
 import dh5 from "../assets/projects/dhanna/dh5.jpeg";
+import founder from "../assets/founder.jpg";
 
 import Achievements from "../components/Achievements";
 import ReviewsSection from "../components/ReviewsSection";
+import Footer from "../components/Footer";
 
 export default function AboutUs() {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -164,29 +166,49 @@ export default function AboutUs() {
             <Card icon={<Users />} title="Relationship Managers" />
             <Card icon={<Zap />} title="Seamless Process" />
             <Card icon={<Leaf />} title="Ready Plots" />
-            <Card icon={<TrendingUp />} title="Growth Potential" />
+            
 
           </div>
         </div>
       </section>
 
       {/* ================= FOUNDER ================= */}
-      <section className="py-24 px-6 bg-gray-50 text-center">
-        <div className="max-w-3xl mx-auto">
+<section className="py-24 px-6 bg-gray-50">
+  <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
-          <h2 className="text-3xl font-bold mb-6">Founder’s Note</h2>
+    {/* IMAGE */}
+    <img
+      src={require("../assets/founder.png")}
+      alt="Amar Akre Founder"
+      className="w-[220px] h-[220px] object-cover rounded-full shadow-lg border-[4px] border-white"
+    />
 
-          <p className="italic text-gray-600 leading-[1.8]">
-            “We don’t see customers as transactions. We see them as trust.”
-          </p>
+    {/* TEXT */}
+    <div className="text-center md:text-left">
 
-          <p className="mt-6 font-semibold">— Amar Akre</p>
+      <h2 className="text-3xl font-bold mb-4">Founder’s Note</h2>
 
-        </div>
-      </section>
+      <p className="italic text-gray-600 leading-[1.8]">
+        “We don’t see customers as transactions. We see them as people placing
+        their trust and savings in our hands. That responsibility drives every
+        decision we make at AmarInfratech.”
+      </p>
+
+      <p className="mt-6 font-semibold text-lg">
+        — Amar Akre
+      </p>
+
+      <p className="text-gray-500 text-sm">
+        Founder, AmarInfratech
+      </p>
+
+    </div>
+  </div>
+</section>
 
       <Achievements />
       <ReviewsSection />
+      <Footer/>
 
     </div>
   );
