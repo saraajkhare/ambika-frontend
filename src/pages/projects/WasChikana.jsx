@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 
 /* ===== IMAGES (CHANGE PATHS IF NEEDED) ===== */
-import hero from "../../assets/projects/chikana/hero.jpeg";
+import hero from "../../assets/projects/chikana/hero.jpg";
 import gal1 from "../../assets/projects/chikana/ch1.jpeg";
 import gal2 from "../../assets/projects/chikana/ch2.jpeg";
 import gal3 from "../../assets/projects/chikana/ch3.jpeg";
