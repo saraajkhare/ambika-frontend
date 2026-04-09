@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import aboutHero from "../assets/homebg.png";
 
 import dh1 from "../assets/projects/dhanna/dh1.jpeg";
-import dh2 from "../assets/projects/dhanna/dh2.jpeg";
-import dh3 from "../assets/projects/dhanna/dh3.jpeg";
+
+
 import dh4 from "../assets/projects/dhanna/dh4.jpeg";
 import dh5 from "../assets/projects/dhanna/dh5.jpeg";
 
@@ -15,7 +15,7 @@ import ReviewsSection from "../components/ReviewsSection";
 export default function AboutUs() {
   const [selectedImg, setSelectedImg] = useState(null);
 
-  const images = [dh1, dh2, dh3, dh4, dh5];
+  const images = [dh1,dh4, dh5];
 
   return (
     <div className="w-full overflow-hidden">
