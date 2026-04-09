@@ -13,6 +13,9 @@ import WasDhamana from "./pages/projects/Dhamana";
 
 
 import AboutUs from "./pages/AboutUs";
+import WasTumdi from "./pages/projects/Tumdi";
+
+
 
 function App() {
   return (
@@ -24,6 +27,7 @@ function App() {
         
 <Route path="/projects/chikana" element={<WasChikana />} />
 <Route path="/projects/dhamana" element={<WasDhamana />} />
+<Route path="/projects/tumdi" element={<WasTumdi />} />
 <Route path="/emi" element={<EmiCalculator />} />
 <Route path="/emi-calculator" element={<EmiCalculator />} />
 <Route path="/contact" element={<ContactUs />} />
