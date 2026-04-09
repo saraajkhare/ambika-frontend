@@ -7,7 +7,7 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_KEY = "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"; // ⚠️ paste here
+const API_KEY = process.env.REACT_APP_CLAUDE_KEY;; // ⚠️ paste here
 
   const sendMessage = async () => {
     if (!input.trim()) return;
