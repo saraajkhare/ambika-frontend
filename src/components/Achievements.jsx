@@ -1,9 +1,9 @@
 import useCountUp from "../hooks/useCountUp";
 
 export default function Achievements() {
-  const space = useCountUp(5);
-  const units = useCountUp(300);
-  const families = useCountUp(300);
+  const projects = useCountUp(5);
+  const plots = useCountUp(200);
+  const families = useCountUp(200);
 
   return (
     <section className="py-20 bg-white">
@@ -11,18 +11,32 @@ export default function Achievements() {
 
         <div className="text-center mb-12">
           <p className="text-sm tracking-widest uppercase text-gray-500">
-            Ambika’s Projects
+            AmarInfratech Developments
           </p>
           <h2 className="text-4xl font-bold mt-2">
-            Our Reviews and <span className="text-green-700">Achievements</span>
+            Our Growth & <span className="text-green-700">Achievements</span>
           </h2>
         </div>
 
         <div className="bg-gradient-to-r from-green-800 to-green-700 rounded-2xl p-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-white shadow-xl">
 
-          <Stat icon="⭐" value={`${space} Lacs +`} label="Sq Ft Total Constructed Space" />
-          <Stat icon="✅" value={`${units} +`} label="Flats / Commercial Units" />
-          <Stat icon="😊" value={`${families} +`} label="Happy Families" />
+          <Stat 
+            icon="📍" 
+            value={`${projects} +`} 
+            label="Residential Projects Delivered" 
+          />
+
+          <Stat 
+            icon="🏡" 
+            value={`${plots} +`} 
+            label="Plots Developed & Sold" 
+          />
+
+          <Stat 
+            icon="😊" 
+            value={`${families} +`} 
+            label="Happy Families & Investors" 
+          />
 
         </div>
       </div>
