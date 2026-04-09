@@ -9,11 +9,11 @@ import {
 } from "react-icons/fa";
 
 /* ===== IMAGES (CHANGE PATHS IF NEEDED) ===== */
-import hero from "../../assets/projects/chikana/hero.jpg";
-import gal1 from "../../assets/projects/chikana/ch1.jpg";
-import gal2 from "../../assets/projects/chikana/ch2.jpg";
-import gal3 from "../../assets/projects/chikana/ch3.jpg";
-import gal4 from "../../assets/projects/chikana/ch4.jpg";
+import hero from "../../assets/projects/chikana/hero.jpeg";
+import gal1 from "../../assets/projects/chikana/ch1.jpeg";
+import gal2 from "../../assets/projects/chikana/ch2.jpeg";
+import gal3 from "../../assets/projects/chikana/ch3.jpeg";
+import gal4 from "../../assets/projects/chikana/ch4.jpeg";
 
 import ContactParalax from "../../components/ContactParallax";
 
