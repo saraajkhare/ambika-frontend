@@ -15,7 +15,7 @@ import gal2 from "../../assets/projects/chikana/ch2.jpeg";
 import gal3 from "../../assets/projects/chikana/ch3.jpeg";
 import gal4 from "../../assets/projects/chikana/ch4.jpeg";
 
-import ContactParalax from "../../components/ContactParallax";
+import ContactParallax from "../../components/ContactParallax";
 
 export default function WasChikana() {
   const [active, setActive] = useState(0);
@@ -157,7 +157,7 @@ export default function WasChikana() {
       </section>
 
       {/* ================= CTA ================= */}
-      <ContactParalax />
+      <ContactParallax />
 
      {/* ================= MAP ================= */}
 <section className="w-full h-[420px]">
@@ -182,3 +182,4 @@ function Facility({ icon, title }) {
     </div>
   );
 }
+

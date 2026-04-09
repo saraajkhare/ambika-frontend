@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         
-<Route path="/projects/was-chikana" element={<WasChikana />} />
+<Route path="/projects/chikana" element={<WasChikana />} />
 <Route path="/emi" element={<EmiCalculator />} />
 <Route path="/emi-calculator" element={<EmiCalculator />} />
 <Route path="/contact" element={<ContactUs />} />
