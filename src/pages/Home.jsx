@@ -12,7 +12,7 @@ import { blogs } from "../data/blogs";
 import { Link } from "react-router-dom";
 import Achievements from "../components/Achievements";
 import ReviewsSection from "../components/ReviewsSection"; 
-import ProjectVideos from "../components/ProjectVideos";
+
 import ContactParallax from "../components/ContactParallax";
 
 const Home = () => {
@@ -57,7 +57,7 @@ const Home = () => {
 </section>
   <Achievements />
       <ReviewsSection />
-      <ProjectVideos />
+     
 
 
       <Footer />
