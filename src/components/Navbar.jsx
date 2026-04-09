@@ -37,33 +37,26 @@ const Navbar = () => {
 
             {/* Dropdown */}
             <div className="absolute top-full left-0 mt-3 hidden min-w-[240px] flex-col rounded-lg bg-white py-2 shadow-[0_12px_30px_rgba(0,0,0,0.15)] group-hover:flex z-[999]">
-
-              {[
-                ["Ambika Ananda", "/projects/ambika-ananda"],
-                ["Ambika Devendra", "/projects/ambika-devendra"],
-                ["Ambika Dhanna", "/projects/ambika-dhanna"],
-                ["Ambika Chikana", "/projects/ambika-chikana"],
-                ["Ambika Shree", "/projects/ambika-shree"],
-                ["Ambika Heritage", "/projects/ambika-heritage"],
-                ["Ambika Green", "/projects/ambika-green"],
-                ["Ambika Shrine", "/projects/ambika-shrine"],
-                ["Diamond Home", "/projects/diamond-home"],
-              ].map(([label, path]) => (
-                <NavLink
-                  key={path}
-                  to={path}
-                  className={({ isActive }) =>
-                    `px-[18px] py-[10px] text-[15px] font-medium transition-all
-                    ${
-                      isActive
-                        ? "text-[#e10600] font-semibold"
-                        : "text-[#111] hover:bg-[#fff1f1] hover:text-[#e10600]"
-                    }`
-                  }
-                >
-                  {label}
-                </NavLink>
-              ))}
+{[
+  ["Chikana", "/projects/chikana"],
+  ["Dhamana", "/projects/dhamana"],
+  ["Tumdi", "/projects/tumdi"],
+].map(([label, path]) => (
+  <NavLink
+    key={path}
+    to={path}
+    className={({ isActive }) =>
+      `px-[18px] py-[10px] text-[15px] font-medium transition-all
+      ${
+        isActive
+          ? "text-[#e10600] font-semibold"
+          : "text-[#111] hover:bg-[#fff1f1] hover:text-[#e10600]"
+      }`
+    }
+  >
+    {label}
+  </NavLink>
+))}
             </div>
           </div>
 
