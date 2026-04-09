@@ -18,6 +18,12 @@ export default function Chatbot() {
     setLoading(true);
 
     try {
+      // Anthropic API requires the first message to have role "user".
+      // We filter out our initial greeting if it's the first message.
+      const apiMessages = newMessages.filter(
+        (m, i) => !(i === 0 && m.role === "assistant")
+      );
+
       const res = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
         headers: {
@@ -35,17 +41,23 @@ Talk about Chikana, Dhamana, Tumdi plots.
 Be short, friendly, and convincing.
 Always try to convert user into a lead.
           `,
-          messages: newMessages
+          messages: apiMessages
         })
       });
 
       const data = await res.json();
 
-      const reply =
-        data?.content?.[0]?.text || "Sorry, something went wrong.";
-
-      setMessages([...newMessages, { role: "assistant", content: reply }]);
+      if (!res.ok) {
+        console.error("API Error:", data.error);
+        const errorMsg = data.error?.message || "Sorry, something went wrong.";
+        setMessages([...newMessages, { role: "assistant", content: errorMsg }]);
+      } else {
+        const reply =
+          data?.content?.[0]?.text || "Sorry, something went wrong.";
+        setMessages([...newMessages, { role: "assistant", content: reply }]);
+      }
     } catch (err) {
+      console.error(err);
       setMessages([
         ...newMessages,
         { role: "assistant", content: "Error connecting 😢" }
