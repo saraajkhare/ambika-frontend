@@ -1,9 +1,9 @@
-const images = [
-  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80",
-];
+import home1 from "../assets/home1.png";
+import home2 from "../assets/home2.png";
+import home3 from "../assets/home3.png";
+import home4 from "../assets/home4.png";
+
+const images = [home1, home2, home3, home4];
 
 const FeatureStrip = () => {
   return (
