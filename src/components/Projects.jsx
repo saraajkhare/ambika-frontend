@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // PLACEHOLDER IMAGES (replace later when sir sends)
 import ch1 from "../assets/projects/chikana/ch1.jpeg";
-import dh1 from "../assets/projects/dhanna/dh1.jpeg";
+import dh1 from "../assets/projects/dhamana/dh1.jpeg";
 
 
 // BOOKING OPEN (use any existing images for now)
