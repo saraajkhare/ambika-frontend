@@ -63,10 +63,10 @@ export default function AboutUs() {
 
           {/* IMAGES */}
           <div className="grid md:grid-cols-2 gap-8 mb-14">
-            <img src={dh1} className="rounded-xl shadow-lg w-full object-cover" />
-            <img src={dh2} className="rounded-xl shadow-lg w-full object-cover" />
-            <img src={dh3} className="rounded-xl shadow-lg w-full object-cover" />
-            <img src={dh4} className="rounded-xl shadow-lg w-full object-cover" />
+            <img src={dh1} className="rounded-xl shadow-lg w-full object-cover"  alt=""/>
+            <img src={dh2} className="rounded-xl shadow-lg w-full object-cover" alt=""/>
+            <img src={dh3} className="rounded-xl shadow-lg w-full object-cover" alt=""/>
+            <img src={dh4} className="rounded-xl shadow-lg w-full object-cover" alt=""/>
           </div>
 
           <div className="mb-14">
