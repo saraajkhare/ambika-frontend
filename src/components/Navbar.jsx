@@ -108,7 +108,7 @@ const Navbar = () => {
 
         {/* RIGHT */}
        <div className="flex items-center gap-4">
-  <span className="font-semibold">+91-70990-62888</span>
+  <span className="font-semibold">+91 95452 72554</span>
 
   <Link to="/contact">
     <button className="bg-[#e30613] text-white font-semibold px-[18px] py-[10px] rounded-md hover:bg-[#c9000c] transition">
