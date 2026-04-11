@@ -21,7 +21,7 @@ export default function ContactUs() {
           <div className="bg-white/15 backdrop-blur-md px-[45px] py-[35px] rounded-[14px] min-w-[260px] shadow-[0_20px_45px_rgba(0,0,0,0.25)]">
             <span className="block text-[28px] mb-2">📞</span>
             <h3 className="text-[18px] font-semibold mb-1">
-              +91-70990-62888
+              +91 95452 72554 
             </h3>
             <p className="text-[13px] opacity-85">Call us on</p>
           </div>
@@ -30,7 +30,7 @@ export default function ContactUs() {
           <div className="bg-white/15 backdrop-blur-md px-[45px] py-[35px] rounded-[14px] min-w-[260px] shadow-[0_20px_45px_rgba(0,0,0,0.25)]">
             <span className="block text-[28px] mb-2">💬</span>
             <h3 className="text-[18px] font-semibold mb-1">
-              info@ambikahousing.com
+              mailto:akre.amar@gmail.com
             </h3>
             <p className="text-[13px] opacity-85">Mail us at</p>
           </div>
