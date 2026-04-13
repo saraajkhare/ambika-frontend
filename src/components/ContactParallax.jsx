@@ -9,45 +9,37 @@ export default function ContactParallax({ projectName = "Chikana" }) {
     property: projectName,
   });
 
-  const [loading, setLoading] = useState(false);
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    try {
-      const res = await fetch("https://ambika-housing.onrender.com/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: `${formData.firstName} ${formData.lastName}`,
-          phone: formData.phone,
-          email: formData.email,
-          property: formData.property,
-        }),
-      });
+    // Optimistically show success and clear form
+    alert("✅ Enquiry sent successfully!");
 
-      if (!res.ok) throw new Error("Email failed");
+    const payload = {
+      name: `${formData.firstName} ${formData.lastName}`,
+      phone: formData.phone,
+      email: formData.email,
+      property: formData.property,
+    };
 
-      alert("✅ Enquiry sent successfully!");
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      property: projectName,
+    });
 
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        property: projectName,
-      });
-    } catch (error) {
-      console.error(error);
-      alert("❌ Something went wrong");
-    } finally {
-      setLoading(false);
-    }
+    // Send silently in the background
+    fetch("https://ambika-housing.onrender.com/api/enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch((error) => console.error("Background fetch failed:", error));
   };
 
   return (
@@ -151,10 +143,9 @@ export default function ContactParallax({ projectName = "Chikana" }) {
 
             <button
               type="submit"
-              disabled={loading}
               className="w-full py-3 rounded-md bg-orange-500 hover:bg-orange-400 font-bold transition disabled:opacity-60"
             >
-              {loading ? "SENDING..." : "GET DETAILS"}
+              GET DETAILS
             </button>
           </form>
         </div>

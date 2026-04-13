@@ -4,8 +4,6 @@ import diamondImg from "../assets/projects/chikana/ch1.jpeg";
 
 export default function BookingPopup() {
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
-
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -27,29 +25,21 @@ export default function BookingPopup() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    try {
-      const res = await fetch("https://ambika-housing.onrender.com/api/enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+    // Optimistically show success and close popup instantly
+    alert("Enquiry sent successfully ✅");
+    setOpen(false);
 
-      const data = await res.json();
-
-      if (!res.ok) throw new Error(data.message);
-
-      alert("Enquiry sent successfully ✅");
-      setOpen(false);
-    } catch (err) {
-      alert("Something went wrong ❌");
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
+    // Run fetch quietly in the background without blocking the UI
+    fetch("https://ambika-housing.onrender.com/api/enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    }).catch((err) => {
+      console.error("Background fetch failed:", err);
+    });
   };
 
   if (!open) return null;
@@ -111,10 +101,9 @@ export default function BookingPopup() {
 
           <button
             type="submit"
-            disabled={loading}
             className="w-full bg-green-800 text-white py-3 rounded"
           >
-            {loading ? "SENDING..." : "SEND YOUR ENQUIRY"}
+            SEND YOUR ENQUIRY
           </button>
         </form>
       </div>
