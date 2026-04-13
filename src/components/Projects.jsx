@@ -124,25 +124,31 @@ const Projects = () => {
 
             {/* CONTENT */}
             <div className="p-[26px]">
-              <button
-                className="
-                  w-full
-                  flex items-center justify-center gap-2
-                  bg-gradient-to-r from-[#e30613] to-[#9e0007]
-                  hover:from-[#c2000b] hover:to-[#730005]
-                  text-white
-                  font-bold tracking-wider
-                  px-[18px] py-[14px]
-                  rounded-xl
-                  text-[13px] uppercase
-                  transition-all duration-300
-                  transform group-hover:scale-[1.02]
-                  shadow-lg hover:shadow-[0_8px_20px_rgba(227,6,19,0.3)]
-                "
-              >
-                Explore Property
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
+              {project.status !== "Sold Out" ? (
+                <button
+                  className="
+                    w-full
+                    flex items-center justify-center gap-2
+                    bg-gradient-to-r from-[#e30613] to-[#9e0007]
+                    hover:from-[#c2000b] hover:to-[#730005]
+                    text-white
+                    font-bold tracking-wider
+                    px-[18px] py-[14px]
+                    rounded-xl
+                    text-[13px] uppercase
+                    transition-all duration-300
+                    transform group-hover:scale-[1.02]
+                    shadow-lg hover:shadow-[0_8px_20px_rgba(227,6,19,0.3)]
+                  "
+                >
+                  Explore Property
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              ) : (
+                <div className="w-full text-center py-[14px] text-gray-500 font-semibold tracking-wider text-[13px] uppercase bg-gray-100 rounded-xl">
+                  Fully Sold
+                </div>
+              )}
             </div>
           </div>
         ))}
