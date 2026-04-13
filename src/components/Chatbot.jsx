@@ -1,98 +1,43 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Chatbot.css";
 
-const COMPANY_CONTEXT = `
-You are a friendly and knowledgeable Plot Advisor for Amarnath Infra Systems Pvt Ltd, a residential land development company based in the Nagpur region, Maharashtra, India.
+const KNOWLEDGE_BASE = [
+  {
+    keywords: ["price", "cost", "how much", "rate", "budget", "pricing"],
+    response: "Our plots are priced between <strong>₹1,000 to ₹1,100 per sq ft</strong>.<br/><br/>- Compact plots (~1,210 sq ft) start around ₹12.10L<br/>- Mid-size plots (~1,400 sq ft) start around ₹14.05L<br/>- Premium plots (~4,000+ sq ft) start around ₹38L<br/><br/>Would you like to know the exact dimensions of a specific plot?"
+  },
+  {
+    keywords: ["size", "dimension", "area", "sq ft", "how big", "sizes", "available"],
+    response: "We offer three main categories in the Tumadi Layout:<br/><br/>- <strong>Compact</strong>: ~1,210 sq ft (Ideal for starter homes)<br/>- <strong>Mid-size</strong>: ~1,400–1,780 sq ft (Great for independent bungalows)<br/>- <strong>Large/Premium</strong>: ~3,740–4,742 sq ft (Best for villas or duplexes)"
+  },
+  {
+    keywords: ["location", "where", "tumadi", "ring road", "address", "city", "map", "projects"],
+    response: "Our prime project, <strong>Tumadi Layout</strong>, is nestled in Tumadi Village, near the Nagpur Ring Road.<br/>It's an incredibly fast-appreciating zone with excellent connectivity on the outskirts of Nagpur city.<br/><br/>📍 <a href='https://maps.app.goo.gl/V8rvoYkBnGb7Lu8R6?g_st=ipc' target='_blank' style='color:#C9A84C;text-decoration:underline;'>View on Google Maps</a>"
+  },
+  {
+    keywords: ["legal", "rera", "approved", "approval", "na", "title", "documents"],
+    response: "All our land has <strong>Clear Titles</strong> and verified documentation.<br/><br/>We assist with NA (Non-Agricultural) conversion and RERA registrations. Please confirm the exact current RERA status directly with our office team during your site visit!"
+  },
+  {
+    keywords: ["book", "booking", "buy", "process", "how to"],
+    response: "<strong>Booking Process:</strong><br/>1. Arrange a free site visit.<br/>2. Choose your preferred plot.<br/>3. Pay the booking amount.<br/>4. We execute the Agreement to Sale.<br/>5. Final registration at the Sub-Registrar office.<br/><br/>Call +91 91376 99685 to start!"
+  },
+  {
+    keywords: ["amenities", "facility", "facilities", "infrastructure", "road", "water", "electricity", "included"],
+    response: "<strong>Infrastructure & Amenities included:</strong><br/>- Internal layout roads<br/>- Demarcated plot boundaries with stones<br/>- Proper drainage provisions<br/>- Electricity access provided out to the plot boundary"
+  },
+  {
+    keywords: ["contact", "phone", "number", "email", "call", "whatsapp", "reach", "visit"],
+    response: "You can reach our team strictly dedicated to Tumadi Layout at:<br/><br/>📞 <strong>Phone / WhatsApp</strong>: +91 91376 99685<br/>✉️ <strong>Email</strong>: kpvaishali@gmail.com<br/><br/>Feel free to call anytime to schedule a site visit!"
+  },
+  {
+    keywords: ["hi", "hello", "hey", "namaste", "morning", "afternoon"],
+    response: "Namaste! 🙏 How can I assist you with your land investment today? You can ask me about pricing, location, or plot sizes!"
+  }
+];
 
-COMPANY OVERVIEW:
-- Company: Amarnath Infra Systems Pvt Ltd, established 2023
-- Focus: Residential plotted land developments
-- Tagline: "Own the Land. Own the Future."
-- Philosophy: Transparent dealings, customer-first approach, strategic locations
+const FALLBACK_RESPONSE = "I'm your digital Plot Advisor! I'm here to answer common questions about Tumadi Layout, but I couldn't quite catch that. <br/><br/>Could you try asking about <strong>pricing</strong>, <strong>plot sizes</strong>, or <strong>location</strong>? Or feel free to call our human team directly at +91 91376 99685!";
 
-YOUR PROJECTS:
-
-Project 1 — Tumadi Layout, Tumadi Village (near Ring Road), Nagpur
-- Total area: 5 Acres
-- Status: Available — New Launch
-- Price range: ₹1,000 to ₹1,100 per sq ft
-
-LOCATION DETAILS:
-- Village (Mauza): Tumadi (तुमडी)
-- Patavari Halka No.: 74
-- Gram Panchayat: Tumadi (गट–ग्रामपंचायत तुमडी)
-- Taluka: Nagpur (Rural) — नागपूर (ग्रामीण)
-- District: Nagpur — नागपूर
-- Land type: Agricultural / Shetkari land within Nagpur district limits (हद्दीमधील शेतजमीन)
-- Location advantage: Near the Nagpur Ring Road — excellent connectivity, fast-appreciating zone on the outskirts of Nagpur city
-- Google Maps: https://maps.app.goo.gl/V8rvoYkBnGb7Lu8R6?g_st=ipc
-
-COMPLETE PLOT DIMENSION TABLE (Tumadi Layout):
-
-Plot 6     — Trapezoid shape | 3,741 sq ft (347.51 sq mt) | ₹37.41L – ₹41.15L
-Plots 7–10 — 10.0 x 16.5 m  | 1,776 sq ft (165 sq mt) each | ₹17.76L – ₹19.54L each
-Plot 11    — 15.5 x 10.5 m  | 1,752 sq ft (162.75 sq mt) | ₹17.52L – ₹19.27L
-Plots 12–23 — 15.5 x 7.25 m | 1,210 sq ft (112.38 sq mt) each | ₹12.10L – ₹13.31L each
-Plot 24    — 15.5 x 9.083 m | 1,515 sq ft (140.79 sq mt) | ₹15.15L – ₹16.67L
-Plot 25    — 15.5 x 9.083 m | 1,515 sq ft (140.79 sq mt) | ₹15.15L – ₹16.67L
-Plots 26–37 — 15.5 x 7.25 m | 1,210 sq ft (112.38 sq mt) each | ₹12.10L – ₹13.31L each
-Plot 38    — 15.5 x 10.5 m  | 1,752 sq ft (162.75 sq mt) | ₹17.52L – ₹19.27L
-Plot 39    — 15.0 x 10.5 m  | 1,695 sq ft (157.5 sq mt) | ₹16.95L – ₹18.65L
-Plots 40–49 — 15.0 x 8.7 m  | 1,405 sq ft (130.5 sq mt) each | ₹14.05L – ₹15.45L each
-Plot 50    — 15.0 x 9.083 m | 1,467 sq ft (136.25 sq mt) | ₹14.67L – ₹16.13L
-Plot 51    — Trapezoid shape | 3,898 sq ft (362.15 sq mt) | ₹38.98L – ₹42.88L
-Plot 52    — 20.772 x 17.4 m | 3,890 sq ft (361.43 sq mt) | ₹38.90L – ₹42.79L
-Plot 53    — 20.966 x 17.4 m | 3,927 sq ft (364.81 sq mt) | ₹39.27L – ₹43.20L
-Plot 54    — 21.604 x 17.4 m | 4,046 sq ft (375.91 sq mt) | ₹40.46L – ₹44.51L
-Plot 55    — 22.243 x 17.4 m | 4,166 sq ft (387.03 sq mt) | ₹41.66L – ₹45.83L
-Plot 56    — 22.947 x 19.2 m | 4,742 sq ft (440.58 sq mt) | ₹47.42L – ₹52.17L
-
-SUMMARY BY SIZE CATEGORY:
-- Compact plots (~1,210 sq ft): Plots 12–23 and 26–37 — ideal for starter home or investment
-- Mid-size plots (~1,400–1,780 sq ft): Plots 7–11, 24, 25, 38–50 — great for independent bungalow
-- Large / premium plots (~3,740–4,742 sq ft): Plots 6, 51–56 — villa, duplex, or high-value investment
-- Biggest plot: Plot 56 at 4,742 sq ft — most premium in the layout
-
-LEGAL & APPROVALS:
-- Clear title land, verified documentation
-- NA (Non-Agricultural) conversion — confirm latest status with team
-- RERA registration — confirm latest status directly with team
-
-INFRASTRUCTURE:
-- Internal roads within the layout
-- Plot boundary demarcation with stones
-- Drainage provisions
-- Electricity access at plot boundary
-
-BOOKING PROCESS:
-1. Site visit arranged within 24–48 hours on request
-2. Choose your preferred plot number and size
-3. Pay booking amount (confirm exact amount with team)
-4. Agreement to Sale executed
-5. Registration at Sub-Registrar office
-6. Documents required: Aadhaar card, PAN card, passport photo, address proof
-
-PAYMENT OPTIONS:
-- Outright / full payment purchase
-- Bank home loans applicable (buyer arranges with their bank)
-- Flexible payment plans may be available — check with team
-
-CONTACT:
-- Phone / WhatsApp: +91 91376 99685
-- Email: kpvaishali@gmail.com
-- Site visits: By appointment — call or WhatsApp to schedule
-
-PERSONALITY GUIDELINES:
-- Be warm, professional, and helpful — like a trusted advisor, not a pushy salesperson
-- Speak in simple, clear English; you may use a Hindi or Marathi word or phrase if it feels natural
-- Always offer to arrange a site visit when a buyer shows interest
-- If asked about a specific plot number, give the exact dimensions and price range from the table above
-- If unsure about something (e.g. exact RERA number, current availability of a specific plot), say so honestly and ask them to contact the team
-- Keep answers concise — 2 to 4 short paragraphs maximum
-- Never fabricate information — only share what is listed above
-- Always end with a clear next step or offer (e.g. "Would you like to schedule a site visit?")
-- For contact, always share: Phone/WhatsApp +91 91376 99685 or email kpvaishali@gmail.com
-`;
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
@@ -163,46 +108,22 @@ export default function Chatbot() {
     if (inputRef.current) inputRef.current.style.height = "auto";
     setIsLoading(true);
 
-    try {
-      // Filter out our custom 'time' property and the first dummy welcome message before sending to API 
-      const apiMessages = newMessages
-        .filter((m, i) => !(i === 0 && m.role === "assistant"))
-        .map((m) => ({ role: m.role, content: m.content }));
+    // Simulate reading/typing delay
+    setTimeout(() => {
+      const lowerInput = textToSend.toLowerCase();
+      let foundResponse = FALLBACK_RESPONSE;
 
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": API_KEY,
-          "anthropic-version": "2023-06-01",
-          "anthropic-dangerous-direct-browser-access": "true"
-        },
-        body: JSON.stringify({
-          model: "claude-3-5-haiku-20241022",
-          max_tokens: 600,
-          system: COMPANY_CONTEXT,
-          messages: apiMessages
-        })
-      });
-
-      const data = await res.json();
-      const replyTime = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
-
-      if (!res.ok) {
-        console.error("API Error:", data.error);
-        const errorMsg = data.error?.message || "Sorry, something went wrong.";
-        setMessages([...newMessages, { role: "assistant", content: errorMsg, time: replyTime }]);
-      } else {
-        const reply = data?.content?.[0]?.text || "Sorry, I couldn't process that. Please try again.";
-        setMessages([...newMessages, { role: "assistant", content: reply, time: replyTime }]);
+      for (const item of KNOWLEDGE_BASE) {
+        if (item.keywords.some(kw => lowerInput.includes(kw))) {
+          foundResponse = item.response;
+          break; 
+        }
       }
-    } catch (err) {
-      console.error(err);
-      const replyTime = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
-      setMessages([...newMessages, { role: "assistant", content: "Error connecting 😢", time: replyTime }]);
-    }
 
-    setIsLoading(false);
+      const replyTime = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+      setMessages([...newMessages, { role: "assistant", content: foundResponse, time: replyTime }]);
+      setIsLoading(false);
+    }, 800);
   };
 
   const sendMessage = () => {
@@ -303,7 +224,7 @@ export default function Chatbot() {
         </div>
 
         <div className="chat-footer">
-          Powered by <span>Claude AI · Anthropic</span> · Available 24 × 7
+          Powered by <span>Amarnath Infra Systems</span> · Available 24 × 7
         </div>
       </div>
       )}
