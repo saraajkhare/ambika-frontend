@@ -10,6 +10,15 @@ const PromoVideo = ({ onClose }) => {
         flex items-center justify-center
       "
     >
+      {/* Close Button */}
+      <button 
+        onClick={onClose}
+        className="absolute top-6 right-8 text-white text-3xl hover:scale-110 transition-transform z-50 p-2"
+        aria-label="Close video"
+      >
+        ✕
+      </button>
+
       <div
         onClick={(e) => e.stopPropagation()}
         className="
