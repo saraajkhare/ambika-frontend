@@ -61,7 +61,6 @@ export default function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [showQuickTopics, setShowQuickTopics] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
   const messagesEndRef = useRef(null);
@@ -205,16 +204,14 @@ export default function Chatbot() {
           </div>
 
         {/* Quick topic chips */}
-        {showQuickTopics && (
-          <div className="quick-topics">
-            <div className="topic-chip" onClick={() => sendQuick("What plot sizes are available?")}>Plot Sizes</div>
-            <div className="topic-chip" onClick={() => sendQuick("What are the price ranges?")}>Pricing</div>
-            <div className="topic-chip" onClick={() => sendQuick("Where are your projects located?")}>Locations</div>
-            <div className="topic-chip" onClick={() => sendQuick("Is the land RERA approved?")}>Legal & RERA</div>
-            <div className="topic-chip" onClick={() => sendQuick("How do I book a plot?")}>How to Book</div>
-            <div className="topic-chip" onClick={() => sendQuick("What amenities are included?")}>Amenities</div>
-          </div>
-        )}
+        <div className="quick-topics">
+          <div className="topic-chip" onClick={() => sendQuick("What plot sizes are available?")}>Plot Sizes</div>
+          <div className="topic-chip" onClick={() => sendQuick("What are the price ranges?")}>Pricing</div>
+          <div className="topic-chip" onClick={() => sendQuick("Where are your projects located?")}>Locations</div>
+          <div className="topic-chip" onClick={() => sendQuick("Is the land RERA approved?")}>Legal & RERA</div>
+          <div className="topic-chip" onClick={() => sendQuick("How do I book a plot?")}>How to Book</div>
+          <div className="topic-chip" onClick={() => sendQuick("What amenities are included?")}>Amenities</div>
+        </div>
 
         {/* Messages */}
         <div className="chat-messages-container">
