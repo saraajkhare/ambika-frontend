@@ -71,11 +71,14 @@ export default function ContactParallax({ projectName = "Chikana" }) {
             </p>
 
             <p className="text-sm mb-1">+91 95452 72554</p>
+            <p className="text-sm mb-1">+91 91376 99685</p>
             <p className="text-sm">akre.amar@gmail.com</p>
+            <p className="text-sm">kpvaishali@gmail.com</p>
 
             <div className="mt-6 text-lg">
               📞 WhatsApp Us Now <br />
-              <strong>+91 95452 72554</strong>
+              <strong>+91 95452 72554</strong> <br />
+              <strong>+91 91376 99685</strong>
             </div>
           </div>
 
