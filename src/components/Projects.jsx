@@ -15,12 +15,12 @@ const completedProjects = [
   {
     name: "Chikana Project",
     image: ch1,
-    status: "Sold Out",
+    status: "Booking Open",
   },
   {
     name: "Dhamna Project",
     image: dh1,
-    status: "Sold Out",
+    status: "Booking Open",
   },
 ];
 
