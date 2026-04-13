@@ -105,8 +105,6 @@ export default function Chatbot() {
   const sendWithText = async (textToSend) => {
     if (!textToSend.trim() || isLoading) return;
 
-    if (showQuickTopics) setShowQuickTopics(false);
-
     const currentTime = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
 
     const newUserMsg = { role: "user", content: textToSend, time: currentTime };
