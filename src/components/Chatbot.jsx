@@ -38,8 +38,19 @@ const KNOWLEDGE_BASE = [
 
 const FALLBACK_RESPONSE = "I'm your digital Plot Advisor! I'm here to answer common questions about Tumadi Layout, but I couldn't quite catch that. <br/><br/>Could you try asking about <strong>pricing</strong>, <strong>plot sizes</strong>, or <strong>location</strong>? Or feel free to call our human team directly at +91 91376 99685!";
 
+const PLOT_DATABASE = {
+  6: 3741, 7: 1776, 8: 1776, 9: 1776, 10: 1776,
+  11: 1752, 12: 1210, 13: 1210, 14: 1210, 15: 1210, 16: 1210, 17: 1210, 18: 1210, 19: 1210, 20: 1210, 21: 1210, 22: 1210, 23: 1210,
+  24: 1515, 25: 1515, 26: 1210, 27: 1210, 28: 1210, 29: 1210, 30: 1210, 31: 1210, 32: 1210, 33: 1210, 34: 1210, 35: 1210, 36: 1210, 37: 1210,
+  38: 1752, 39: 1695, 40: 1405, 41: 1405, 42: 1405, 43: 1405, 44: 1405, 45: 1405, 46: 1405, 47: 1405, 48: 1405, 49: 1405,
+  50: 1467, 51: 3898, 52: 3890, 53: 3927, 54: 4046, 55: 4166, 56: 4742
+};
 
 export default function Chatbot() {
+  const formatLakhs = (amount) => {
+    return "₹" + (amount / 100000).toFixed(2) + "L";
+  };
+
   const [messages, setMessages] = useState([
     {
       role: "assistant",
@@ -111,10 +122,49 @@ export default function Chatbot() {
       const lowerInput = textToSend.toLowerCase();
       let foundResponse = FALLBACK_RESPONSE;
 
-      for (const item of KNOWLEDGE_BASE) {
-        if (item.keywords.some(kw => lowerInput.includes(kw))) {
-          foundResponse = item.response;
-          break; 
+      // --- 1. Regex Plot Calculator ---
+      if (lowerInput.includes("plot")) {
+        const plotNumbers = textToSend.match(/\b\d+\b/g); 
+        if (plotNumbers && plotNumbers.length > 0) {
+          let foundValidPlots = [];
+          
+          plotNumbers.forEach(numStr => {
+            const pNum = parseInt(numStr, 10);
+            if (PLOT_DATABASE[pNum]) {
+              foundValidPlots.push({ number: pNum, sqft: PLOT_DATABASE[pNum] });
+            }
+          });
+
+          if (foundValidPlots.length > 0) {
+            let totalSqft = 0;
+            let totalBasePrice = 0; // Using base ₹1000/sqft
+            let responseHTML = "Here are the details you requested:<br/><br/>";
+
+            foundValidPlots.forEach(plot => {
+              totalSqft += plot.sqft;
+              const plotPrice = plot.sqft * 1000;
+              totalBasePrice += plotPrice;
+              responseHTML += `• <strong>Plot ${plot.number}</strong>: ${plot.sqft.toLocaleString()} sq ft (starts at ${formatLakhs(plotPrice)})<br/>`;
+            });
+
+            if (foundValidPlots.length > 1) {
+              responseHTML += `<br/><strong>Combined Total Area:</strong> ${totalSqft.toLocaleString()} sq ft<br/>`;
+              responseHTML += `<strong>Combined Base Price:</strong> ${formatLakhs(totalBasePrice)}<br/>`;
+            }
+            
+            responseHTML += `<br/><em>Note: Pricing is based on ₹1,000/sq ft. Premium shapes/corners may go up to ₹1,100. Contact our team to secure these specific plots!</em>`;
+            foundResponse = responseHTML;
+          }
+        }
+      }
+
+      // --- 2. General Knowledge Base Fallback ---
+      if (foundResponse === FALLBACK_RESPONSE) {
+        for (const item of KNOWLEDGE_BASE) {
+          if (item.keywords.some(kw => lowerInput.includes(kw))) {
+            foundResponse = item.response;
+            break; 
+          }
         }
       }
 
