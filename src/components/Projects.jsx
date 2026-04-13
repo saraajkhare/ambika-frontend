@@ -73,64 +73,75 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* GRID */}
-      <div className="grid gap-[36px] grid-cols-[repeat(auto-fill,minmax(320px,1fr))]">
+      <div className="grid gap-[40px] grid-cols-[repeat(auto-fill,minmax(340px,1fr))]">
         {getProjects().map((project, index) => (
           <div
             key={index}
             className="
-              bg-[#f6fff5]
-              rounded-[14px]
+              bg-white
+              rounded-2xl
               overflow-hidden
-              shadow-[0_10px_28px_rgba(0,0,0,0.08)]
-              transition-all duration-300
-              hover:-translate-y-[8px]
-              hover:shadow-[0_18px_45px_rgba(0,0,0,0.15)]
+              border border-gray-100
+              shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+              transition-all duration-500
+              hover:-translate-y-3
+              hover:shadow-[0_24px_50px_rgba(0,0,0,0.12)]
+              group
             "
           >
             {/* IMAGE */}
-            <div className="relative">
+            <div className="relative overflow-hidden">
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-full h-[220px] object-cover"
+                className="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-110"
               />
+              
+              {/* Image Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-300"></div>
 
+              {/* Glassmorphism Badge */}
               <span
                 className={`
-                  absolute top-[14px] left-[14px]
-                  px-[14px] py-[6px]
-                  rounded-full text-[13px] font-semibold text-white
+                  absolute top-[18px] left-[18px]
+                  px-[16px] py-[6px]
+                  rounded-full text-[11px] font-bold tracking-widest uppercase backdrop-blur-md border border-white/20
                   ${
                     project.status === "Sold Out"
-                      ? "bg-[#e84c3d]"
-                      : "bg-[#1f7a3f]"
+                      ? "bg-red-600/80 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]"
+                      : "bg-[#1f7a3f]/80 text-green-50 shadow-[0_0_15px_rgba(31,122,63,0.5)]"
                   }
                 `}
               >
                 {project.status}
               </span>
+
+              {/* Title Inside Image */}
+              <h3 className="absolute bottom-[24px] left-[24px] text-[26px] font-bold text-white drop-shadow-lg z-10 transition-transform duration-500 group-hover:-translate-y-2">
+                {project.name}
+              </h3>
             </div>
 
             {/* CONTENT */}
-            <div className="p-[22px]">
-              <h3 className="text-[22px] mb-[12px] font-semibold">
-                {project.name}
-              </h3>
-
+            <div className="p-[26px]">
               <button
                 className="
-                  mt-[16px]
-                  bg-[#6b0f0f]
-                  hover:bg-[#4a0909]
+                  w-full
+                  flex items-center justify-center gap-2
+                  bg-gradient-to-r from-[#e30613] to-[#9e0007]
+                  hover:from-[#c2000b] hover:to-[#730005]
                   text-white
-                  px-[18px] py-[10px]
-                  rounded-[6px]
-                  text-[14px]
-                  transition-colors duration-300
+                  font-bold tracking-wider
+                  px-[18px] py-[14px]
+                  rounded-xl
+                  text-[13px] uppercase
+                  transition-all duration-300
+                  transform group-hover:scale-[1.02]
+                  shadow-lg hover:shadow-[0_8px_20px_rgba(227,6,19,0.3)]
                 "
               >
-                EXPLORE NOW
+                Explore Property
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
             </div>
           </div>

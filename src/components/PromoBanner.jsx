@@ -43,19 +43,23 @@ const PromoBanner = () => {
           <button
             onClick={() => setOpen(true)}
             className="
-              w-[64px] h-[64px]
+              relative
+              w-[70px] h-[70px]
               rounded-full
-              bg-[#2ecc71]
-              text-black
-              text-[22px]
+              bg-gradient-to-r from-[#e30613] to-[#c9000c]
+              text-white
+              text-[24px] pl-[4px]
               flex items-center justify-center
               mb-[24px]
               transition-all duration-300
               hover:scale-110
-              hover:shadow-[0_0_20px_rgba(46,204,113,0.6)]
+              shadow-[0_0_30px_rgba(227,6,19,0.8)]
+              group
             "
           >
-            ▶
+            {/* Pulsing ring behind the button */}
+            <span className="absolute inset-0 rounded-full bg-[#e30613] animate-ping opacity-60 pointer-events-none"></span>
+            <span className="relative z-10">▶</span>
           </button>
 
           {/* SUBTITLE */}
