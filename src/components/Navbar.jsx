@@ -110,8 +110,7 @@ const Navbar = () => {
        <div className="flex items-center gap-4">
   <div className="flex flex-col items-end mr-2">
     <span className="font-semibold">+91 95452 72554</span>
-    <span className="font-semibold text-sm">+91 91376 99685</span>
-    <span className="text-xs text-gray-500 font-medium">kpvaishali@gmail.com</span>
+   
   </div>
 
   <Link to="/contact">
