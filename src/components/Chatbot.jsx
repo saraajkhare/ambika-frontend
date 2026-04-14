@@ -114,61 +114,76 @@ export default function Chatbot() {
     if (inputRef.current) inputRef.current.style.height = "auto";
     setIsLoading(true);
 
-    // Simulate reading/typing delay
-    setTimeout(() => {
-      const lowerInput = textToSend.toLowerCase();
-      let foundResponse = FALLBACK_RESPONSE;
+    // Attempt Local Processing first
+    const lowerInput = textToSend.toLowerCase();
+    let foundResponse = null;
 
-      // --- 1. Regex Plot Calculator ---
-      if (lowerInput.includes("plot")) {
-        const plotNumbers = textToSend.match(/\b\d+\b/g); 
-        if (plotNumbers && plotNumbers.length > 0) {
-          let foundValidPlots = [];
-          
-          plotNumbers.forEach(numStr => {
-            const pNum = parseInt(numStr, 10);
-            if (PLOT_DATABASE[pNum]) {
-              foundValidPlots.push({ number: pNum, sqft: PLOT_DATABASE[pNum] });
-            }
+    // --- 1. Regex Plot Calculator (Instant) ---
+    if (lowerInput.includes("plot")) {
+      const plotNumbers = textToSend.match(/\b\d+\b/g); 
+      if (plotNumbers && plotNumbers.length > 0) {
+        let foundValidPlots = [];
+        plotNumbers.forEach(numStr => {
+          const pNum = parseInt(numStr, 10);
+          if (PLOT_DATABASE[pNum]) {
+            foundValidPlots.push({ number: pNum, sqft: PLOT_DATABASE[pNum] });
+          }
+        });
+
+        if (foundValidPlots.length > 0) {
+          let totalSqft = 0;
+          let totalBasePrice = 0; 
+          let responseHTML = "Here are the details you requested:<br/><br/>";
+          foundValidPlots.forEach(plot => {
+            totalSqft += plot.sqft;
+            const plotPrice = plot.sqft * 1000;
+            totalBasePrice += plotPrice;
+            responseHTML += `• <strong>Plot ${plot.number}</strong>: ${plot.sqft.toLocaleString()} sq ft (starts at ${formatLakhs(plotPrice)})<br/>`;
           });
-
-          if (foundValidPlots.length > 0) {
-            let totalSqft = 0;
-            let totalBasePrice = 0; // Using base ₹1000/sqft
-            let responseHTML = "Here are the details you requested:<br/><br/>";
-
-            foundValidPlots.forEach(plot => {
-              totalSqft += plot.sqft;
-              const plotPrice = plot.sqft * 1000;
-              totalBasePrice += plotPrice;
-              responseHTML += `• <strong>Plot ${plot.number}</strong>: ${plot.sqft.toLocaleString()} sq ft (starts at ${formatLakhs(plotPrice)})<br/>`;
-            });
-
-            if (foundValidPlots.length > 1) {
-              responseHTML += `<br/><strong>Combined Total Area:</strong> ${totalSqft.toLocaleString()} sq ft<br/>`;
-              responseHTML += `<strong>Combined Base Price:</strong> ${formatLakhs(totalBasePrice)}<br/>`;
-            }
-            
-            responseHTML += `<br/><em>Note: Pricing is based on ₹1,000/sq ft. Premium shapes/corners may go up to ₹1,100. Contact our team to secure these specific plots!</em>`;
-            foundResponse = responseHTML;
+          if (foundValidPlots.length > 1) {
+            responseHTML += `<br/><strong>Combined Total Area:</strong> ${totalSqft.toLocaleString()} sq ft<br/>`;
+            responseHTML += `<strong>Combined Base Price:</strong> ${formatLakhs(totalBasePrice)}<br/>`;
           }
+          responseHTML += `<br/><em>Note: Pricing is based on ₹1,000/sq ft. Premium shapes/corners may go up to ₹1,100. Contact our team to secure these specific plots!</em>`;
+          foundResponse = responseHTML;
         }
       }
+    }
 
-      // --- 2. General Knowledge Base Fallback ---
-      if (foundResponse === FALLBACK_RESPONSE) {
-        for (const item of KNOWLEDGE_BASE) {
-          if (item.keywords.some(kw => lowerInput.includes(kw))) {
-            foundResponse = item.response;
-            break; 
-          }
+    // --- 2. General Knowledge Base Fallback ---
+    if (!foundResponse) {
+      for (const item of KNOWLEDGE_BASE) {
+        if (item.keywords.some(kw => lowerInput.includes(kw))) {
+          foundResponse = item.response;
+          break; 
         }
       }
+    }
 
-      const replyTime = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
-      setMessages([...newMessages, { role: "assistant", content: foundResponse, time: replyTime }]);
-      setIsLoading(false);
-    }, 800);
+    // --- 3. Final AI Intelligence Step ---
+    if (!foundResponse) {
+      try {
+        const response = await fetch("https://ambika-housing.onrender.com/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: textToSend }),
+        });
+        const data = await response.json();
+        if (data.reply) {
+          foundResponse = data.reply;
+        } else {
+          foundResponse = FALLBACK_RESPONSE;
+        }
+      } catch (error) {
+        console.error("AI Bridge Error:", error);
+        foundResponse = FALLBACK_RESPONSE;
+      }
+    }
+
+    // Provide response
+    const replyTime = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+    setMessages(prev => [...prev, { role: "assistant", content: foundResponse, time: replyTime }]);
+    setIsLoading(false);
   };
 
   const sendMessage = () => {
