@@ -8,7 +8,7 @@ export default function ContactUs() {
       {/* ================= RED CONTACT INFO SECTION ================= */}
       <section className="bg-gradient-to-br from-[#c80000] to-[#e60000] py-[90px] px-5 text-center text-white">
         <p className="text-[13px] tracking-[2px] opacity-90 mb-3">
-          CONTACT US AmarinfraTech
+          CONTACT US AMARINFRATECH
         </p>
 
         <h1 className="text-[42px] font-bold mb-[50px] leading-tight max-md:text-[30px]">
