@@ -1,9 +1,25 @@
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Sun, Moon } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
+
   return (
-    <header className="sticky top-0 z-[1000] bg-white border-b-[3px] border-[#e30613]">
+    <header className="sticky top-0 z-[1000] bg-white dark:bg-darkblue border-b-[3px] border-[#e30613] transition-colors duration-300">
       <div className="max-w-[1400px] mx-auto px-8 py-[14px] flex items-center justify-between">
 
         {/* LOGO */}
@@ -17,8 +33,8 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `font-semibold text-[#333] relative ${
-                isActive ? "text-[#e30613]" : ""
+              `font-semibold relative transition-colors ${
+                isActive ? "text-[#e30613]" : "text-[#333] dark:text-gray-200 hover:text-[#e30613] dark:hover:text-[#e30613]"
               }`
             }
           >
@@ -28,7 +44,7 @@ const Navbar = () => {
           {/* PROJECTS DROPDOWN */}
           <div className="relative group flex items-center">
 
-            <span className="font-semibold text-[#333] cursor-pointer select-none">
+            <span className="font-semibold text-[#333] dark:text-gray-200 cursor-pointer select-none hover:text-[#e30613] transition-colors">
               Projects ▾
             </span>
 
@@ -36,7 +52,7 @@ const Navbar = () => {
             <span className="absolute top-full left-0 w-full h-3"></span>
 
             {/* Dropdown */}
-            <div className="absolute top-full left-0 mt-3 hidden min-w-[240px] flex-col rounded-lg bg-white py-2 shadow-[0_12px_30px_rgba(0,0,0,0.15)] group-hover:flex z-[999]">
+            <div className="absolute top-full left-0 mt-3 hidden min-w-[240px] flex-col rounded-lg bg-white dark:bg-gray-800 py-2 shadow-[0_12px_30px_rgba(0,0,0,0.15)] group-hover:flex z-[999] border dark:border-gray-700">
 {[
   ["Chikana", "/projects/chikana"],
   ["Dhamana", "/projects/dhamana"],
@@ -50,7 +66,7 @@ const Navbar = () => {
       ${
         isActive
           ? "text-[#e10600] font-semibold"
-          : "text-[#111] hover:bg-[#fff1f1] hover:text-[#e10600]"
+          : "text-[#111] dark:text-gray-200 hover:bg-[#fff1f1] dark:hover:bg-gray-700 hover:text-[#e10600] dark:hover:text-[#e30613]"
       }`
     }
   >
@@ -63,8 +79,8 @@ const Navbar = () => {
           <NavLink
             to="/emi"
             className={({ isActive }) =>
-              `font-semibold text-[#333] ${
-                isActive ? "text-[#e30613]" : ""
+              `font-semibold transition-colors ${
+                isActive ? "text-[#e30613]" : "text-[#333] dark:text-gray-200 hover:text-[#e30613] dark:hover:text-[#e30613]"
               }`
             }
           >
@@ -74,8 +90,8 @@ const Navbar = () => {
           <NavLink
             to="/blogs"
             className={({ isActive }) =>
-              `font-semibold text-[#333] ${
-                isActive ? "text-[#e30613]" : ""
+              `font-semibold transition-colors ${
+                isActive ? "text-[#e30613]" : "text-[#333] dark:text-gray-200 hover:text-[#e30613] dark:hover:text-[#e30613]"
               }`
             }
           >
@@ -85,8 +101,8 @@ const Navbar = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `font-semibold text-[#333] ${
-                isActive ? "text-[#e30613]" : ""
+              `font-semibold transition-colors ${
+                isActive ? "text-[#e30613]" : "text-[#333] dark:text-gray-200 hover:text-[#e30613] dark:hover:text-[#e30613]"
               }`
             }
           >
@@ -96,8 +112,8 @@ const Navbar = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              `font-semibold text-[#333] ${
-                isActive ? "text-[#e30613]" : ""
+              `font-semibold transition-colors ${
+                isActive ? "text-[#e30613]" : "text-[#333] dark:text-gray-200 hover:text-[#e30613] dark:hover:text-[#e30613]"
               }`
             }
           >
@@ -108,17 +124,24 @@ const Navbar = () => {
 
         {/* RIGHT */}
        <div className="flex items-center gap-4">
-  <div className="flex flex-col items-end mr-2">
-    <span className="font-semibold">+91 95452 72554</span>
-   
-  </div>
+          <div className="flex flex-col items-end mr-2 dark:text-white">
+            <span className="font-semibold">+91 95452 72554</span>
+          </div>
+          
+          <button
+            onClick={() => setIsDarkMode(!isDarkMode)}
+            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors"
+            aria-label="Toggle Dark Mode"
+          >
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
 
-  <Link to="/contact">
-    <button className="bg-[#e30613] text-white font-semibold px-[18px] py-[10px] rounded-md hover:bg-[#c9000c] transition">
-      CONTACT TODAY
-    </button>
-  </Link>
-</div>
+          <Link to="/contact">
+            <button className="bg-[#e30613] text-white font-semibold px-[18px] py-[10px] rounded-md hover:bg-[#c9000c] transition">
+              CONTACT TODAY
+            </button>
+          </Link>
+        </div>
 
       </div>
     </header>
