@@ -4,19 +4,11 @@ import { Sun, Moon } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
-
   useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDarkMode]);
+    // Force remove dark mode across the app
+    document.documentElement.classList.remove("dark");
+    localStorage.removeItem("theme");
+  }, []);
 
   return (
     <header className="sticky top-0 z-[1000] bg-white dark:bg-darkblue border-b-[3px] border-[#e30613] transition-colors duration-300">
@@ -128,13 +120,7 @@ const Navbar = () => {
             <span className="font-semibold">+91 95452 72554</span>
           </div>
           
-          <button
-            onClick={() => setIsDarkMode(!isDarkMode)}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors"
-            aria-label="Toggle Dark Mode"
-          >
-            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+
 
           <Link to="/contact">
             <button className="bg-[#e30613] text-white font-semibold px-[18px] py-[10px] rounded-md hover:bg-[#c9000c] transition">
