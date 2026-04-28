@@ -15,6 +15,7 @@ import WasTumdi from "./pages/projects/Tumdi";
 
 import Chatbot from "./components/Chatbot";
 import AboutUs from "./pages/AboutUs";
+import Admin from "./pages/Admin";
 
 const PageWrapper = ({ children }) => (
   <motion.div
@@ -41,6 +42,7 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<PageWrapper><AboutUs /></PageWrapper>} />
         <Route path="/blogs" element={<PageWrapper><Blogs /></PageWrapper>} />
         <Route path="/blogs/:id" element={<PageWrapper><BlogDetails /></PageWrapper>} />
+        <Route path="/admin" element={<PageWrapper><Admin /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   );
