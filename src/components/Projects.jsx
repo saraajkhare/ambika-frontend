@@ -1,14 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // PLACEHOLDER IMAGES (replace later when sir sends)
 import ch1 from "../assets/projects/chikana/ch1.jpeg";
 import dh1 from "../assets/projects/dhamana/dh1.jpeg";
 
-
 // BOOKING OPEN (use any existing images for now)
 import tum1 from "../assets/projects/tumdi/tum1.jpeg";
-
-
 
 // ✅ COMPLETED PROJECTS (ONLY 2)
 const completedProjects = [
@@ -16,11 +14,13 @@ const completedProjects = [
     name: "Chikana Project",
     image: ch1,
     status: "Booking Open",
+    path: "/projects/chikana",
   },
   {
     name: "Dhamna Project",
     image: dh1,
     status: "Booking Open",
+    path: "/projects/dhamana",
   },
 ];
 
@@ -30,8 +30,8 @@ const bookingProjects = [
     name: "Tumdi Project",
     image: tum1, // placeholder
     status: "Booking Open",
+    path: "/projects/tumdi",
   },
-  
 ];
 
 const Projects = () => {
@@ -44,8 +44,8 @@ const Projects = () => {
   };
 
   return (
-    <section className="bg-[#f3fff2] py-[80px] px-[60px]">
-      <h2 className="text-center text-[34px] font-bold mb-[30px]">
+    <section className="bg-[#f3fff2] dark:bg-gray-900 py-[80px] px-[60px] transition-colors duration-300">
+      <h2 className="text-center text-[34px] font-bold mb-[30px] dark:text-white">
         Our Projects
       </h2>
 
@@ -64,7 +64,7 @@ const Projects = () => {
               ${
                 activeTab === tab.key
                   ? "bg-[#c4161c] text-white"
-                  : "bg-[#eaeaea] hover:bg-[#c4161c] hover:text-white"
+                  : "bg-[#eaeaea] dark:bg-gray-800 dark:text-gray-200 hover:bg-[#c4161c] hover:text-white"
               }
             `}
           >
@@ -78,11 +78,11 @@ const Projects = () => {
           <div
             key={index}
             className="
-              bg-white
+              bg-white dark:bg-gray-800
               rounded-2xl
               overflow-hidden
-              border border-gray-100
-              shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+              border border-gray-100 dark:border-gray-700
+              shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-none
               transition-all duration-500
               hover:-translate-y-3
               hover:shadow-[0_24px_50px_rgba(0,0,0,0.12)]
@@ -125,27 +125,29 @@ const Projects = () => {
             {/* CONTENT */}
             <div className="p-[26px]">
               {project.status !== "Sold Out" ? (
-                <button
-                  className="
-                    w-full
-                    flex items-center justify-center gap-2
-                    bg-gradient-to-r from-[#e30613] to-[#9e0007]
-                    hover:from-[#c2000b] hover:to-[#730005]
-                    text-white
-                    font-bold tracking-wider
-                    px-[18px] py-[14px]
-                    rounded-xl
-                    text-[13px] uppercase
-                    transition-all duration-300
-                    transform group-hover:scale-[1.02]
-                    shadow-lg hover:shadow-[0_8px_20px_rgba(227,6,19,0.3)]
-                  "
-                >
-                  Explore Property
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
+                <Link to={project.path}>
+                  <button
+                    className="
+                      w-full
+                      flex items-center justify-center gap-2
+                      bg-gradient-to-r from-[#e30613] to-[#9e0007]
+                      hover:from-[#c2000b] hover:to-[#730005]
+                      text-white
+                      font-bold tracking-wider
+                      px-[18px] py-[14px]
+                      rounded-xl
+                      text-[13px] uppercase
+                      transition-all duration-300
+                      transform group-hover:scale-[1.02]
+                      shadow-lg hover:shadow-[0_8px_20px_rgba(227,6,19,0.3)]
+                    "
+                  >
+                    Explore Property
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+                </Link>
               ) : (
-                <div className="w-full text-center py-[14px] text-gray-500 font-semibold tracking-wider text-[13px] uppercase bg-gray-100 rounded-xl">
+                <div className="w-full text-center py-[14px] text-gray-500 dark:text-gray-400 font-semibold tracking-wider text-[13px] uppercase bg-gray-100 dark:bg-gray-700 rounded-xl">
                   Fully Sold
                 </div>
               )}
