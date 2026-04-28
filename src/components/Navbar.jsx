@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Sun, Moon } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
