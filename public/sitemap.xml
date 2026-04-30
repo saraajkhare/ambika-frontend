@@ -3,7 +3,13 @@
   <!-- Homepage -->
   <url>
     <loc>https://amarinfratech.vercel.app/</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://amarinfratech.vercel.app/real-estate-in-nagpur</loc>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,19 +17,19 @@
   <!-- Projects -->
   <url>
     <loc>https://amarinfratech.vercel.app/projects/tumdi</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://amarinfratech.vercel.app/projects/chikana</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://amarinfratech.vercel.app/projects/dhamana</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -31,25 +37,25 @@
   <!-- Core Pages -->
   <url>
     <loc>https://amarinfratech.vercel.app/about</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://amarinfratech.vercel.app/contact</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://amarinfratech.vercel.app/emi</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://amarinfratech.vercel.app/blogs</loc>
-    <lastmod>2024-05-01</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

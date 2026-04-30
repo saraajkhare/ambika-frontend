@@ -8,6 +8,7 @@ import EmiCalculator from "./pages/EmiCalculator";
 import ContactUs from "./pages/ContactUs";
 import Blogs from "./pages/Blogs";
 import BlogDetails from "./pages/BlogDetails";
+import RealEstateNagpur from "./pages/RealEstateNagpur";
 
 import WasChikana from "./pages/projects/Chikana";
 import WasDhamana from "./pages/projects/Dhamana";
@@ -40,6 +41,7 @@ const AnimatedRoutes = () => {
         <Route path="/emi" element={<PageWrapper><EmiCalculator /></PageWrapper>} />
         <Route path="/contact" element={<PageWrapper><ContactUs /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><AboutUs /></PageWrapper>} />
+        <Route path="/real-estate-in-nagpur" element={<PageWrapper><RealEstateNagpur /></PageWrapper>} />
         <Route path="/blogs" element={<PageWrapper><Blogs /></PageWrapper>} />
         <Route path="/blogs/:id" element={<PageWrapper><BlogDetails /></PageWrapper>} />
         <Route path="/admin" element={<PageWrapper><Admin /></PageWrapper>} />
