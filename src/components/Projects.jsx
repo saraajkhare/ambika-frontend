@@ -46,7 +46,7 @@ const Projects = () => {
   return (
     <section className="bg-[#f3fff2] dark:bg-gray-900 py-[80px] px-[60px] transition-colors duration-300">
       <h2 className="text-center text-[34px] font-bold mb-[30px] dark:text-white">
-        Our Projects
+        Residential Plot Projects in Nagpur
       </h2>
 
       {/* TABS */}
@@ -93,7 +93,7 @@ const Projects = () => {
             <div className="relative overflow-hidden">
               <img
                 src={project.image}
-                alt={project.name}
+                alt={`${project.name} real estate project in Nagpur`}
                 className="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-110"
               />
               

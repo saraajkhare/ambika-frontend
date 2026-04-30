@@ -22,10 +22,10 @@ const Hero = () => {
       {/* Rich Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex flex-col justify-center pl-[60px] sm:pl-[100px] text-white">
         <h1 className="text-[46px] md:text-[56px] font-extrabold mb-[14px] max-w-[800px] leading-[1.1] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] tracking-tight">
-          Leading Residential Plots Development Company in Nagpur
+          Real Estate in Nagpur for RERA Approved Residential Plots
         </h1>
         <p className="text-[20px] md:text-[22px] max-w-[600px] text-white/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] border-l-4 border-[#e30613] pl-4">
-          Providing affordable plots for best investments in key locations
+          Amar Infratech offers affordable property, planned layouts, and land investment opportunities in key Nagpur locations.
         </p>
       </div>
 

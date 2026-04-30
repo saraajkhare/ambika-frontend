@@ -17,7 +17,7 @@ export default function AboutHighlight() {
         ASSURED LEGAL TITLE
       </h4>
       <p className="text-[14.5px] leading-[1.6] text-[#555]">
-        We provide completely legal government, RERA approved plots. Bank loan can be taken
+        We provide legal, government-approved and RERA approved plots in Nagpur with bank loan support.
       </p>
     </div>
 
@@ -30,7 +30,7 @@ export default function AboutHighlight() {
         FLEXIBLE PAYMENT TERMS
       </h4>
       <p className="text-[14.5px] leading-[1.6] text-[#555]">
-        Payment terms suitable to your budget
+        Payment terms suitable to your real estate budget and plot investment plan.
       </p>
     </div>
 
@@ -43,7 +43,7 @@ export default function AboutHighlight() {
         TIMELY DELIVERY
       </h4>
       <p className="text-[14.5px] leading-[1.6] text-[#555]">
-        You will get timely delivery of your plots
+        You get timely delivery of your residential plots with clear project communication.
       </p>
     </div>
 
