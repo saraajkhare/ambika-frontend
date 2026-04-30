@@ -14,18 +14,11 @@ import Achievements from "../components/Achievements";
 import ReviewsSection from "../components/ReviewsSection"; 
 
 import ContactParallax from "../components/ContactParallax";
-import SEO from "../components/SEO";
 
 
 const Home = () => {
   return (
     <>
-      <SEO
-        title="Amar Infratech | Residential Plots & Real Estate in Nagpur"
-        description="Explore residential plots and real estate in Nagpur with Amar Infratech. View plotted developments in Tumdi, Chikana, Dhamana and nearby growth locations."
-        path="/"
-        keywords="real estate in Nagpur, residential plots Nagpur, plots near Ring Road Nagpur, property in Nagpur, RERA approved plots Nagpur, Amar Infratech"
-      />
       <BookingPopup />
       <Hero />
       <FeatureStrip />

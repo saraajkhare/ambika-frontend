@@ -68,17 +68,6 @@ const Navbar = () => {
           </div>
 
           <NavLink
-            to="/real-estate-in-nagpur"
-            className={({ isActive }) =>
-              `font-semibold transition-colors ${
-                isActive ? "text-[#e30613]" : "text-[#333] dark:text-gray-200 hover:text-[#e30613] dark:hover:text-[#e30613]"
-              }`
-            }
-          >
-            Real Estate Nagpur
-          </NavLink>
-
-          <NavLink
             to="/emi"
             className={({ isActive }) =>
               `font-semibold transition-colors ${
