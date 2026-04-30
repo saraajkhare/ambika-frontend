@@ -1,26 +1,26 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 // PLACEHOLDER IMAGES (replace later when sir sends)
 import ch1 from "../assets/projects/chikana/ch1.jpeg";
-import dh1 from "../assets/projects/dhamana/dh1.jpeg";
+import dh1 from "../assets/projects/dhanna/dh1.jpeg";
+
 
 // BOOKING OPEN (use any existing images for now)
 import tum1 from "../assets/projects/tumdi/tum1.jpeg";
+
+
 
 // ✅ COMPLETED PROJECTS (ONLY 2)
 const completedProjects = [
   {
     name: "Chikana Project",
     image: ch1,
-    status: "Booking Open",
-    path: "/projects/chikana",
+    status: "Sold Out",
   },
   {
     name: "Dhamna Project",
     image: dh1,
-    status: "Booking Open",
-    path: "/projects/dhamana",
+    status: "Sold Out",
   },
 ];
 
@@ -30,8 +30,8 @@ const bookingProjects = [
     name: "Tumdi Project",
     image: tum1, // placeholder
     status: "Booking Open",
-    path: "/projects/tumdi",
   },
+  
 ];
 
 const Projects = () => {
@@ -44,9 +44,9 @@ const Projects = () => {
   };
 
   return (
-    <section className="bg-[#f3fff2] dark:bg-gray-900 py-[80px] px-[60px] transition-colors duration-300">
-      <h2 className="text-center text-[34px] font-bold mb-[30px] dark:text-white">
-        Residential Plot Projects in Nagpur
+    <section className="bg-[#f3fff2] py-[80px] px-[60px]">
+      <h2 className="text-center text-[34px] font-bold mb-[30px]">
+        Our Projects
       </h2>
 
       {/* TABS */}
@@ -64,7 +64,7 @@ const Projects = () => {
               ${
                 activeTab === tab.key
                   ? "bg-[#c4161c] text-white"
-                  : "bg-[#eaeaea] dark:bg-gray-800 dark:text-gray-200 hover:bg-[#c4161c] hover:text-white"
+                  : "bg-[#eaeaea] hover:bg-[#c4161c] hover:text-white"
               }
             `}
           >
@@ -73,84 +73,65 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="grid gap-[40px] grid-cols-[repeat(auto-fill,minmax(340px,1fr))]">
+      {/* GRID */}
+      <div className="grid gap-[36px] grid-cols-[repeat(auto-fill,minmax(320px,1fr))]">
         {getProjects().map((project, index) => (
           <div
             key={index}
             className="
-              bg-white dark:bg-gray-800
-              rounded-2xl
+              bg-[#f6fff5]
+              rounded-[14px]
               overflow-hidden
-              border border-gray-100 dark:border-gray-700
-              shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-none
-              transition-all duration-500
-              hover:-translate-y-3
-              hover:shadow-[0_24px_50px_rgba(0,0,0,0.12)]
-              group
+              shadow-[0_10px_28px_rgba(0,0,0,0.08)]
+              transition-all duration-300
+              hover:-translate-y-[8px]
+              hover:shadow-[0_18px_45px_rgba(0,0,0,0.15)]
             "
           >
             {/* IMAGE */}
-            <div className="relative overflow-hidden">
+            <div className="relative">
               <img
                 src={project.image}
-                alt={`${project.name} real estate project in Nagpur`}
-                className="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-110"
+                alt={project.name}
+                className="w-full h-[220px] object-cover"
               />
-              
-              {/* Image Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-300"></div>
 
-              {/* Glassmorphism Badge */}
               <span
                 className={`
-                  absolute top-[18px] left-[18px]
-                  px-[16px] py-[6px]
-                  rounded-full text-[11px] font-bold tracking-widest uppercase backdrop-blur-md border border-white/20
+                  absolute top-[14px] left-[14px]
+                  px-[14px] py-[6px]
+                  rounded-full text-[13px] font-semibold text-white
                   ${
                     project.status === "Sold Out"
-                      ? "bg-red-600/80 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]"
-                      : "bg-[#1f7a3f]/80 text-green-50 shadow-[0_0_15px_rgba(31,122,63,0.5)]"
+                      ? "bg-[#e84c3d]"
+                      : "bg-[#1f7a3f]"
                   }
                 `}
               >
                 {project.status}
               </span>
-
-              {/* Title Inside Image */}
-              <h3 className="absolute bottom-[24px] left-[24px] text-[26px] font-bold text-white drop-shadow-lg z-10 transition-transform duration-500 group-hover:-translate-y-2">
-                {project.name}
-              </h3>
             </div>
 
             {/* CONTENT */}
-            <div className="p-[26px]">
-              {project.status !== "Sold Out" ? (
-                <Link to={project.path}>
-                  <button
-                    className="
-                      w-full
-                      flex items-center justify-center gap-2
-                      bg-gradient-to-r from-[#e30613] to-[#9e0007]
-                      hover:from-[#c2000b] hover:to-[#730005]
-                      text-white
-                      font-bold tracking-wider
-                      px-[18px] py-[14px]
-                      rounded-xl
-                      text-[13px] uppercase
-                      transition-all duration-300
-                      transform group-hover:scale-[1.02]
-                      shadow-lg hover:shadow-[0_8px_20px_rgba(227,6,19,0.3)]
-                    "
-                  >
-                    Explore Property
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                  </button>
-                </Link>
-              ) : (
-                <div className="w-full text-center py-[14px] text-gray-500 dark:text-gray-400 font-semibold tracking-wider text-[13px] uppercase bg-gray-100 dark:bg-gray-700 rounded-xl">
-                  Fully Sold
-                </div>
-              )}
+            <div className="p-[22px]">
+              <h3 className="text-[22px] mb-[12px] font-semibold">
+                {project.name}
+              </h3>
+
+              <button
+                className="
+                  mt-[16px]
+                  bg-[#6b0f0f]
+                  hover:bg-[#4a0909]
+                  text-white
+                  px-[18px] py-[10px]
+                  rounded-[6px]
+                  text-[14px]
+                  transition-colors duration-300
+                "
+              >
+                EXPLORE NOW
+              </button>
             </div>
           </div>
         ))}
