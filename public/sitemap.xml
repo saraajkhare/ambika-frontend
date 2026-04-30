@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://amarinfratech.vercel.app/</loc>
+    <loc>https://www.amarinfratech.com/</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://amarinfratech.vercel.app/real-estate-in-nagpur</loc>
+    <loc>https://www.amarinfratech.com/real-estate-in-nagpur</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -16,19 +16,19 @@
   
   <!-- Projects -->
   <url>
-    <loc>https://amarinfratech.vercel.app/projects/tumdi</loc>
+    <loc>https://www.amarinfratech.com/projects/tumdi</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://amarinfratech.vercel.app/projects/chikana</loc>
+    <loc>https://www.amarinfratech.com/projects/chikana</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://amarinfratech.vercel.app/projects/dhamana</loc>
+    <loc>https://www.amarinfratech.com/projects/dhamana</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -36,25 +36,25 @@
 
   <!-- Core Pages -->
   <url>
-    <loc>https://amarinfratech.vercel.app/about</loc>
+    <loc>https://www.amarinfratech.com/about</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://amarinfratech.vercel.app/contact</loc>
+    <loc>https://www.amarinfratech.com/contact</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://amarinfratech.vercel.app/emi</loc>
+    <loc>https://www.amarinfratech.com/emi</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://amarinfratech.vercel.app/blogs</loc>
+    <loc>https://www.amarinfratech.com/blogs</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

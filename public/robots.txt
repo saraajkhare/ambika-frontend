@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://amarinfratech.vercel.app/sitemap.xml
+Sitemap: https://www.amarinfratech.com/sitemap.xml
